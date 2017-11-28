@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { QuestionsService } from 'app/questions.service';
+import { QuestionsService } from '../questions.service';
 import { Query } from '@angular/core/src/metadata/di';
+
 
 @Component({
   selector: 'app-question',
@@ -10,27 +11,29 @@ import { Query } from '@angular/core/src/metadata/di';
 export class QuestionComponent implements OnInit {
 
   questions: any = [];
-  question: any;
+  newQuestion: any;
+  // selectedQuestion: any;
 
   constructor(private questionsService: QuestionsService) { }
 
   ngOnInit() {
     this.questionsService.getAllQuestions().subscribe(questions =>
-      { this.questions = questions; 
+      {
+        this.questions = questions; 
     });
   }
 
   postQuestion(){
-    var response = '{"title" : "' + this.question + '"}';
+    var response = '{"title" : "' + this.newQuestion + '"}';
     console.log(response);
     this.questionsService.postQuestion(JSON.parse(response));
     
-    console.log(this.questions);
-    this.questionsService.getAllQuestions().subscribe(questions =>
-      { this.questions = questions; 
-    });
-    console.log(this.questions);
-
+    // console.log(this.questions);
+    // this.questionsService.getAllQuestions().subscribe(questions =>
+    //   { this.questions = questions; 
+    // });
+    // console.log(this.questions);
+    window.location.reload();
   }
 
 }

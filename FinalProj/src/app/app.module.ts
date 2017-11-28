@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question/question.component';
 import { QuestionsService } from './questions.service';
+import { QuestionDetailComponent } from './question-detail/question-detail.component'
 
 const ROUTES = [
   {
@@ -17,13 +18,17 @@ const ROUTES = [
   {
     path: 'questions',
     component: QuestionComponent
+  },
+  { path: 'questions/:id',      
+    component: QuestionDetailComponent 
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionComponent
+    QuestionComponent,
+    QuestionDetailComponent
   ],
   imports: [
     BrowserModule,
