@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost/questionDB', { useMongoClient: true });
 mongoose.Promise = global.Promise;
 
 // Get our API routes
-// const api = require('./server/routes/api');
+// const api = require('./server/routes/question-route');
 let initApp = require('./server/app');
 
 const app = express();
@@ -29,7 +29,6 @@ initApp(app);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
-  console.log("Request get");
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
