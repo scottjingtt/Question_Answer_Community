@@ -20,6 +20,13 @@ export class QuestionComponent implements OnInit {
     this.questionsService.getAllQuestions().subscribe(questions =>
       {
         this.questions = questions; 
+        this.sortOnTime();
+    });
+  }
+
+  sortOnTime(){
+    this.questions.sort(function(a, b){
+      return new Date(b.created_date) > new Date(a.created_date);
     });
   }
 

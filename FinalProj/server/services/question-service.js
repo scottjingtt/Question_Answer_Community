@@ -64,7 +64,7 @@ exports.get = function (questionId, callback) {
  * @param {function} callback {Sucess callback function}
  */
 exports.update = function (question, callback) {
-    question.modified_date = Date.now;
+    question.modified_date = Date.now();
     Question.findOneAndUpdate({
         _id: question._id
     }, question, {

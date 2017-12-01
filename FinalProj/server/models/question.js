@@ -32,6 +32,12 @@ let QuestionSchema = new Schema({
     modified_date: {
         type: Date,
         default: Date.now
+    },
+    /**
+     * Question anwsers.
+     */
+    answers: {
+        type: [{ body: String, date: Date }],
     }
 }, {
     versionKey: false

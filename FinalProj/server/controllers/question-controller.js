@@ -53,8 +53,10 @@ exports.get = function (request, response) {
  * @param {response} {HTTP response object}
  */
 exports.put = function (request, response) {
-    let question = Object.assign({}, request.body);;
+    let question = Object.assign({}, request.body);
     question._id = request.params.questionId;
+    // console.log(question);
+    // console.log(question.answers);
     questionService.update(question, function (question) {
         response.json(question);
     });
