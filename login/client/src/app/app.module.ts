@@ -9,7 +9,7 @@ import { customHttpProvider } from './http/custom-http';
 import { AlertComponent } from './directives/alert.component';
 // import { AuthGuard } from './_guards/index';
 import { AlertService, UserService } from './services/index';
-// import { HomeComponent } from './home/index';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent} from './register/register.component';
 import { AppComponent } from './app.component';
@@ -19,7 +19,7 @@ import { AppComponent } from './app.component';
     AppComponent,
     RegisterComponent,
     AlertComponent,
-    // HomeComponent,
+    HomeComponent,
     LoginComponent,
   ],
   imports: [
