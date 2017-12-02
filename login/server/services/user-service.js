@@ -43,7 +43,7 @@ exports.save = function (user, callback) {//create a new object inside mongodb
         throwError(err);
         callback(user);
     });
-    console.log("something");
+    console.log("something"+newUser.userName+".");
 };
 
 /**

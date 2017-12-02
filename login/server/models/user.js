@@ -9,9 +9,16 @@ let UserSchema = new Schema({
     /**
      * Title of the sticky.
      */
-    title: {
+    userName: {
         type: String,
-        // required: "title is required"
+        required: "title is required"
+    },
+    /**
+     * Title of the sticky.
+     */
+    password: {
+        type: String,
+        required: "title is required"
     },
     /**
      * Sticky created date.
@@ -23,16 +30,29 @@ let UserSchema = new Schema({
     /**
      * Sticky content.
      */
-    content: {
+    firstName: {
         type: String
     },
     /**
-     * Last modified date.
+     * Sticky content.
      */
-    modified_date: {
-        type: Date,
-        default: Date.now
-    }
+    lastName: {
+        type: String
+    },
+    /**
+     * Sticky content.
+     */
+    email: {
+        type: String,
+        required: "title is required"
+    },
+    /**
+     * user's majors
+     */
+    tags: {
+        type: [String]
+    },
+
 }, {
     versionKey: false
 });
