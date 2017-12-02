@@ -9,16 +9,16 @@ let UserSchema = new Schema({
     /**
      * Title of the sticky.
      */
-    userName: {
+    username: {
         type: String,
-        required: "title is required"
+        required: "username is required"
     },
     /**
      * Title of the sticky.
      */
     password: {
         type: String,
-        required: "title is required"
+        required: "password is required"
     },
     /**
      * Sticky created date.
@@ -44,7 +44,7 @@ let UserSchema = new Schema({
      */
     email: {
         type: String,
-        required: "title is required"
+        required: "email is required"
     },
     /**
      * user's majors
