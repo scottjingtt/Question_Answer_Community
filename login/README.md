@@ -14,9 +14,8 @@ directives
 helps
 models
 register
-
+home
 
 services(authentification)
 guards
-home
 login

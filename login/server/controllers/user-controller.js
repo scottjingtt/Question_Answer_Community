@@ -74,3 +74,22 @@ exports.delete = function (request, response) {
         });
     });
 };
+
+
+exports.authenticate = function(request, response) {
+    console.log("auth controlloer here " + request.body.username);
+    userService.authenticate(request.body.username, request.body.password)
+        .then(function (user) {
+            if (user) {
+                // authentication successful
+                console.log("response " + user.username);
+                response.send(user);
+            } else {
+                // authentication failed
+                response.status(400).send('Username or password is incorrect');
+            }
+        })
+        .catch(function (err) {
+            response.status(400).send(err);
+        });
+}

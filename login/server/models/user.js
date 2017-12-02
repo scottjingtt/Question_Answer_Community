@@ -52,6 +52,9 @@ let UserSchema = new Schema({
     tags: {
         type: [String]
     },
+    hash:{
+        type: String
+    }
 
 }, {
     versionKey: false

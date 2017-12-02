@@ -15,4 +15,7 @@ module.exports = function (app) {
         .get(userController.get)
         .put(userController.put)
         .delete(userController.delete);
+
+    app.route('/users/authenticate')
+        .post(userController.authenticate);
 };

@@ -39,10 +39,12 @@ exports.search = function (params, callback) {
  */
 exports.save = function (user, callback) {//create a new object inside mongodb
     let newUser = new User(user);
+    newUser.hash = bcrypt.hashSync(user.password, 10);
     newUser.save(function (err, user) {
         throwError(err);
         callback(user);
     });
+    console.log("put here");
     console.log("something"+newUser.username+".");
 };
 
@@ -90,3 +92,33 @@ exports.delete = function (userId, callback) {
         callback();
     });
 };
+
+var Q = require('q');
+var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
+exports.authenticate = function (username, password) {
+    console.log("auth service here "  + username + "  " + password );
+    var deferred = Q.defer();
+
+    User.findOne({ username: username }, function (err, user) {
+        if (err) deferred.reject(err.name + ': ' + err.message);
+        console.log("hash  " + user.hash);
+        if (user && bcrypt.compareSync(password, user.hash)) {
+            // authentication successful
+            deferred.resolve({
+                _id: user._id,
+                username: user.username,
+                firstName: user.firstName,
+                lastName: user.lastName,
+                // token: jwt.sign({ sub: user._id }, config.secret)
+            });
+            console.log("auth service successful");
+        } else {
+            // authentication failed
+            console.log("auth service failed");
+            deferred.resolve();
+        }
+    });
+
+    return deferred.promise;
+}
