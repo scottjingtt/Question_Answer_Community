@@ -10,7 +10,7 @@ import { AlertComponent } from './directives/alert.component';
 // import { AuthGuard } from './_guards/index';
 import { AlertService, UserService } from './services/index';
 // import { HomeComponent } from './home/index';
-// import { LoginComponent } from './login/index';
+import { LoginComponent } from './login/login.component';
 import { RegisterComponent} from './register/register.component';
 import { AppComponent } from './app.component';
 
@@ -18,9 +18,9 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     RegisterComponent,
-    AlertComponent
+    AlertComponent,
     // HomeComponent,
-    // LoginComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

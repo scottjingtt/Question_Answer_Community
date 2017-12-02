@@ -23,27 +23,15 @@ export class RegisterComponent {
             .subscribe(
                 data => {
                     this.alertService.success('Registration successful', true);
-                    // this.router.navigate(['/login']);
-                    console.log(this.model.username + "  " + this.model.password +"  " + this.model.email);
-                    window.location.reload();
+                    this.router.navigate(['/login']);
                 },
                 error => {
                     this.alertService.error(error);
                     this.loading = false;
                 });
-        console.log(this.model.username + "  " + this.model.password +"  " + this.model.email);
     }
 
 
     users: any = [];
   
-    ngOnInit() {
-      this.userService.getAll().subscribe(users =>
-        {
-          this.users = users; 
-      });
-    }
-    test(){
-        console.log(this.model.username + "  " + this.model.password +"  " + this.model.email);
-    }
 }
