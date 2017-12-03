@@ -12,7 +12,9 @@ import { AlertService, UserService,AuthenticationService } from './services/inde
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent} from './register/register.component';
+import {AdminComponent} from './admin/admin.component';
 import { AppComponent } from './app.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { AppComponent } from './app.component';
     AlertComponent,
     HomeComponent,
     LoginComponent,
+    AdminComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,25 @@
+
+      <div class="col-md-6 col-md-offset-3">
+        <h1>Hi {{currentUser.firstName}}!</h1>
+        <p>You're logged in!!</p>
+        <ul>
+            <li>{{currentUser.username}}</li>
+            <li>{{currentUser.firstName}}</li>
+            <li>{{currentUser.lastName}}</li>
+            <li>{{currentUser.password}}</li>
+            <li>{{currentUser.hash}}</li>
+            <li>{{currentUser.token}}</li>
+            <li>{{currentUser.email}}</li>
+            <li>{{currentUser.created_date}}</li>
+        </ul>
+        <h3>All registered users:</h3>
+        <ul>
+            <li *ngFor="let user of users">
+                    <div class="card card-block">
+                {{user.username}} ({{user.firstName}} {{user.lastName}}){{ user.created_date | date:'short'}}
+                - <a (click)="deleteUser(user._id)">Delete</a>
+                </div>
+            </li>
+        </ul>
+        <p><a [routerLink]="['/login']">Logout</a></p>
+    </div>
