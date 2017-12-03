@@ -31,6 +31,40 @@ exports.search = function (params, callback) {
 };
 //CRUD: create, read, update, delete
 
+
+
+exports.create = function(newUser,callback){
+    var deferred = Q.defer();
+    console.log("enter create service");
+    User.findOne({username:newUser.username}, function(err,user){
+        if(err) deferred.reject(err.name + ':' + err.message);
+        if(user){
+            // username already exists
+            console.log("found same username");
+            deferred.reject('Username "' + newUser.username + '" is already taken');
+        }
+        else{
+            console.log("start save");
+            createUser(newUser);
+        }
+    });
+    function createUser(nu) {
+        // set user object to userParam without the cleartext password
+        // var user = _.omit(newUser, 'password');
+        let user = new User(nu);
+        // add hashed password to user object
+        user.hash = bcrypt.hashSync(newUser.password, 10);
+
+        user.save(
+            function (err, user) {
+                if (err) deferred.reject(err.name + ': ' + err.message);
+                console.log("save here");
+                console.log("something"+user.username+".");
+                deferred.resolve(user);
+            });
+    }
+    return deferred.promise;
+}
 /**
  * Saves and returns the new sticky object.
  *
@@ -44,7 +78,7 @@ exports.save = function (user, callback) {//create a new object inside mongodb
         throwError(err);
         callback(user);
     });
-    console.log("put here");
+    console.log("save here");
     console.log("something"+newUser.username+".");
 };
 

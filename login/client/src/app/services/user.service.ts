@@ -16,7 +16,7 @@ export class UserService {
     }
 
     create(user: User) {
-        return this.http.post('/users', user);
+        return this.http.post('/users/register', user);
     }
 
     update(user: User) {

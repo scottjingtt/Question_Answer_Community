@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent} from './register/register.component';
 import {AdminComponent} from './admin/admin.component';
+import {AuthGuard} from './guards/auth.guard';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 
@@ -34,7 +35,7 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   providers: [
     customHttpProvider,
-    // AuthGuard,
+    AuthGuard,
     AlertService,
     AuthenticationService,
     UserService

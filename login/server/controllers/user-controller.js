@@ -6,7 +6,11 @@
 'use strict';
 //import user service.
 const userService = require('../services/user-service');
-
+let throwError = function (error) {
+    if (error) {
+        throw Error(error);
+    }
+};
 /**
  * Returns a list of stickies in JSON based on the
  * search parameters.
@@ -30,10 +34,24 @@ exports.list = function (request, response) {
  */
 exports.post = function (request, response) {
     let newUser = Object.assign({}, request.body);
-    userService.save(newUser, function (user) {
+    // userService.save(newUser, function (user) {
+        userService.create(newUser,function(user){
         response.json(user);
     });
 };
+exports.register = function(request, response) {
+    let newUser = Object.assign({},request.body)
+    userService.create(newUser,function(err,user){
+        throwError(err);
+        response.json(user);
+    })
+    .then(function(){
+        response.sendStatus(200);
+    })
+    .catch(function(err){
+        response.status(400).send(err);
+    });
+}
 
 /**
  * Returns a user object in JSON.
