@@ -110,9 +110,9 @@ exports.authenticate = function (username, password) {
                 username: user.username,
                 firstName: user.firstName,
                 lastName: user.lastName,
-                // token: jwt.sign({ sub: user._id }, config.secret)
+                token: jwt.sign({ sub: user._id }, "iCommunity")
             });
-            console.log("auth service successful");
+            console.log("auth service successful -- ");
         } else {
             // authentication failed
             console.log("auth service failed");

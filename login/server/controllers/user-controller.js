@@ -82,7 +82,7 @@ exports.authenticate = function(request, response) {
         .then(function (user) {
             if (user) {
                 // authentication successful
-                console.log("response " + user.username);
+                console.log("response " + user.username + " token: " + user.token);
                 response.send(user);
             } else {
                 // authentication failed
