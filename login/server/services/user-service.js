@@ -113,6 +113,53 @@ exports.update = function (user, callback) {
     });
 };
 
+exports.updateInfo = function(userID, userParam) {
+    var deferred = Q.defer();
+    console.log(userID + "  " + userParam.username);
+    // validation
+    User.findById(userID, function (err, user) {
+        if (err) deferred.reject(err.name + ': ' + err.message);
+        console.log(typeof user);
+        if (user && user.username !== userParam.username) {
+            // username has changed so check if the new username is already taken
+            User.findOne(
+                { username: userParam.username },
+                function (err, user) {
+                    if (err) deferred.reject(err.name + ': ' + err.message);
+
+                    if (user) {
+                        // username already exists
+                        deferred.reject('Username "' + request.body.username + '" is already taken')
+                    } else {
+                        updateUser();
+                    }
+                });
+        } else {
+            updateUser();
+        }
+    });
+
+    function updateUser() {
+        // update password if it was entered
+        if (userParam.password) {
+            userParam.hash = bcrypt.hashSync(userParam.password, 10);
+        }
+
+            userParam.modified_date = Date.now;
+            User.findOneAndUpdate({
+                _id: userID
+            }, userParam, {
+                new: true
+            }, function (err, user) {
+                if (err) deferred.reject(err.name + ': ' + err.message);
+                
+                                deferred.resolve();
+            });
+    }
+
+    return deferred.promise;
+}
+
 /**
  * Deletes the sticky object matching the id.
  *
@@ -136,7 +183,7 @@ exports.authenticate = function (username, password) {
 
     User.findOne({ username: username }, function (err, user) {
         if (err) deferred.reject(err.name + ': ' + err.message);
-        console.log("hash  " + user.hash);
+        // console.log("hash  " + user.hash);
         if (user && bcrypt.compareSync(password, user.hash)) {
             // authentication successful
             deferred.resolve({

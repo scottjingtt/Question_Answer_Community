@@ -71,11 +71,22 @@ exports.get = function (request, response) {
  * @param {request} {HTTP request object}
  * @param {response} {HTTP response object}
  */
+// exports.put = function (request, response) {
+//     let user = Object.assign({}, request.body);;
+//     user._id = request.params.userId;
+//     userService.update(user, function (user) {
+//         response.json(user);
+//     });
+// };
 exports.put = function (request, response) {
-    let user = Object.assign({}, request.body);;
-    user._id = request.params.userId;
-    userService.update(user, function (user) {
-        response.json(user);
+    let user = Object.assign({}, request.body);
+    // user._id = user._id;
+    userService.updateInfo(user._id, user)
+    .then(function () {
+        response.sendStatus(200);
+    })
+    .catch(function (err) {
+        response.status(400).send(err);
     });
 };
 
