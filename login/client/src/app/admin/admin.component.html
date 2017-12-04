@@ -3,12 +3,17 @@
       <div class="row" *ngFor="let user of users">
         <div class="card card-block">
           <h4 class="card-title">{{ user.username }}</h4>
-          <p>Username: {{user.username}}</p> 
-          <P>Name: ({{user.firstName}} {{user.lastName}})</P>
-          <p>Identity: {{user.identity}}</p>
-          <p>Major: {{user.major}}</p>
-          <p><small>created on {{ user.created_date | date:'short'}}</small></p><a (click)="deleteUser(user._id)">Delete</a>
+          <ul>
+            <li><p>Username: {{user.username}}</p></li> 
+            <li><P>Name: ({{user.firstName}} {{user.lastName}})</P></li> 
+            <li><p>Identity: {{user.identity}}</p></li> 
+            <li><p>Major: {{user.major}}</p></li> 
+            <li><p><small>created on {{ user.created_date | date:'short'}}</small></p></li> 
+            <button class="btn btn-primary" (click)="deleteUser(user._id)">Delete</button>
+          </ul>
         </div>
       </div>
-      <p><a [routerLink]="['/home']">goto home</a></p>
+      
   </div>
+  <div><button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Goto home</button></div>
+  <!-- <a (click)="deleteUser(user._id)">Delete</a> -->
