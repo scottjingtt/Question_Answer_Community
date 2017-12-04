@@ -52,6 +52,12 @@ let UserSchema = new Schema({
     tags: {
         type: [String]
     },
+    major:{
+        type: String
+    },
+    identity:{
+        type: String
+    },
     hash:{
         type: String
     }

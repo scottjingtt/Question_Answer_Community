@@ -192,6 +192,9 @@ exports.authenticate = function (username, password) {
                 firstName: user.firstName,
                 lastName: user.lastName,
                 created_date: user.created_date,
+                identity: user.identity,
+                major: user.major,
+                email:user.email,
                 token: jwt.sign({ sub: user._id }, "iCommunity")
             });
             console.log("auth service successful -- ");

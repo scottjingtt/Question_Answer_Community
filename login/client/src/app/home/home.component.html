@@ -3,13 +3,28 @@
             <h1>Hi {{currentUser.firstName}}!</h1>
             <p>You're logged in!!</p>
             <h3>All registered users:</h3>
-            <ul>
-                <li *ngFor="let user of users">
-                        <div class="card card-block">
-                    {{user.username}} ({{user.firstName}} {{user.lastName}}){{ user.created_date | date:'short'}}
-                    - <a (click)="deleteUser(user._id)">Delete</a>
-                    </div>
-                </li>
-            </ul>
-            <p><a [routerLink]="['/login']">Logout</a></p>
+                <ul>
+                    <li>
+                        <p>Username:</p>{{currentUser.username}}</li>
+                    <li>
+                        <p>FirstName:</p>{{currentUser.firstName}}</li>
+                    <li>
+                        <p>LastName:</p>{{currentUser.lastName}}</li>
+                    <li>
+                        <p>Identity:</p>{{currentUser.identity}}</li>
+                    <li>
+                        <p>Major:</p>{{currentUser.major}}</li>
+                    <li>
+                        <p>user._id:</p>{{currentUser._id}}</li>
+                    <li>
+                        <p>token:</p>{{currentUser.token}}</li>
+                    <li>
+                        <p>Email:</p>{{currentUser.email}}</li>
+                    <li>
+                        <p>Created Date</p>{{currentUser.created_date}}</li>
+                </ul>
+                <!-- </div> -->
+            <button [routerLink]="['/profile']" class="btn btn-primary" ng-click="test()">Edit Profile</button>
+            <button [routerLink]="['/login']" class="btn btn-primary" ng-click="test()">Log out</button>
+            <button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/admin']" class="btn btn-primary" ng-click="test()">Admin Page</button>
         </div>

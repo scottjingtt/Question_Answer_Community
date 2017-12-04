@@ -5,6 +5,8 @@ export class User {
     firstName: string;
     lastName: string;
     email:string;
+    major:string;
+    identity:string;
     tags:[string];
     created_date:Date;
 }

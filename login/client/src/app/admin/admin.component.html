@@ -1,9 +1,14 @@
 <div class="container" id="users">
-    <h2>Users</h2>
+    <h2>All Users</h2>
       <div class="row" *ngFor="let user of users">
         <div class="card card-block">
           <h4 class="card-title">{{ user.username }}</h4>
-          <p><small>created on {{ user.created_date | date:'short'}}</small></p>
+          <p>Username: {{user.username}}</p> 
+          <P>Name: ({{user.firstName}} {{user.lastName}})</P>
+          <p>Identity: {{user.identity}}</p>
+          <p>Major: {{user.major}}</p>
+          <p><small>created on {{ user.created_date | date:'short'}}</small></p><a (click)="deleteUser(user._id)">Delete</a>
         </div>
       </div>
+      <p><a [routerLink]="['/home']">goto home</a></p>
   </div>
