@@ -9,4 +9,5 @@ export class User {
     identity:string;
     tags:[string];
     created_date:Date;
+    image:string;
 }

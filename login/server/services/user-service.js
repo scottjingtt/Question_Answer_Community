@@ -119,7 +119,6 @@ exports.updateInfo = function(userID, userParam) {
     // validation
     User.findById(userID, function (err, user) {
         if (err) deferred.reject(err.name + ': ' + err.message);
-        console.log(typeof user);
         if (user && user.username !== userParam.username) {
             // username has changed so check if the new username is already taken
             User.findOne(
@@ -152,8 +151,20 @@ exports.updateInfo = function(userID, userParam) {
                 new: true
             }, function (err, user) {
                 if (err) deferred.reject(err.name + ': ' + err.message);
-                
-                                deferred.resolve();
+                deferred.resolve(user);
+                // deferred.resolve({
+                //     _id: user._id,
+                //     username: user.username,
+                //     firstName: user.firstName,
+                //     lastName: user.lastName,
+                //     created_date: user.created_date,
+                //     identity: user.identity,
+                //     major: user.major,
+                //     email:user.email,
+                //     image:user.image,
+                //     token: jwt.sign({ sub: user._id }, "iCommunity")
+                // });
+                console.log(user.image);
             });
     }
 
@@ -195,6 +206,7 @@ exports.authenticate = function (username, password) {
                 identity: user.identity,
                 major: user.major,
                 email:user.email,
+                image:user.image,
                 token: jwt.sign({ sub: user._id }, "iCommunity")
             });
             console.log("auth service successful -- ");

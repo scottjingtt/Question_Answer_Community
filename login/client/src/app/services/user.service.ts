@@ -19,7 +19,29 @@ export class UserService {
         return this.http.post('/users/register', user);
     }
     update(user:User){
-        return this.http.put('/users/' + user._id,user);
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if(!currentUser._id){
+            throw "no _id";
+        }
+        if(!currentUser.token){
+            throw "no token found";
+        }
+        return this.http.put('/users/' + user._id,user)
+        .map((response:Response) =>{
+            let user = response.json();
+            if(user){
+                currentUser.username=user.username,
+                currentUser.firstName=user.firstName,
+                currentUser.lastName=user.lastName,
+                currentUser.created_date=user.created_date,
+                currentUser.identity=user.identity,
+                currentUser.major=user.major,
+                currentUser.email=user.email,
+                currentUser.image=user.image,
+                localStorage.setItem('currentUser',JSON.stringify(currentUser));
+                // localStorage.setItem('currentUser',JSON.stringify(user));
+            }
+        });
     }
 
     // update(user: User) {

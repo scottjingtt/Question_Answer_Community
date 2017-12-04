@@ -58,6 +58,9 @@ let UserSchema = new Schema({
     identity:{
         type: String
     },
+    image:{
+        type:String
+    },
     hash:{
         type: String
     }

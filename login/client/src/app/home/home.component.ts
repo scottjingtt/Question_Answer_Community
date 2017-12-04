@@ -21,10 +21,13 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.loadAllUsers();
+        // this.loadAllUsers();
+        this.loadUser();
         // this.alertService.error("return URL: " + this.route.snapshot.queryParams['returnUrl']);
     }
-
+    loadUser(){
+        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    }
     deleteUser(_id: string) {
         this.userService.delete(_id).subscribe(() => { this.loadAllUsers() });
     }

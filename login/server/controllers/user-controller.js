@@ -82,11 +82,18 @@ exports.put = function (request, response) {
     let user = Object.assign({}, request.body);
     // user._id = user._id;
     userService.updateInfo(user._id, user)
-    .then(function () {
-        response.sendStatus(200);
-    })
-    .catch(function (err) {
-        response.status(400).send(err);
+        .then(function (user) {
+            if (user) {
+                // authentication successful
+                console.log("response " + user.username + " image: " + user.image);
+                response.send(user);
+            } else {
+                // authentication failed
+                response.status(400).send('Username or password is incorrect');
+            }
+        })
+        .catch(function (err) {
+            response.status(400).send(err);
     });
 };
 
