@@ -16,6 +16,7 @@ import {AdminComponent} from './admin/admin.component';
 import {AuthGuard} from './guards/auth.guard';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
+// import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @NgModule({
   declarations: [
