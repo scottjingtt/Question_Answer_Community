@@ -1,0 +1,21 @@
+{
+  "name": "quickstart",
+  "version": "1.0.0",
+  "description": "phonebook",
+  "main": "app.js",
+  "scripts": {
+    "compile-sass": "node-sass sass/main.scss css/main.css",
+    "start": "node app.js",
+    "run": "node app.js"
+  },
+  "keywords": [
+    "facebook-api"
+  ],
+  "author": "Taotao Jing",
+  "license": "ISC",
+  "dependencies": {
+    "connect": "^3.6.5",
+    "serve-static": "^1.13.1"
+  },
+  "devDependencies": {}
+}
