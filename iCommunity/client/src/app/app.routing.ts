@@ -10,7 +10,6 @@ import { QuestionDetailComponent} from './question-detail/question-detail.compon
 // import {QuestionComponent} from '/question/question.component';
 
 const appRoutes: Routes = [
-    // { path: '', redirectTo:'home',pathMatch:'full'},
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent },
     { path: 'home', component:HomeComponent,canActivate:[AuthGuard]},
