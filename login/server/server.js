@@ -23,7 +23,7 @@ app.use(expressJwt({
         }
         return null;
     }
-}).unless({ path: ['/users/authenticate', '/users/register','/api/questions','/api/questions/:questionId'] }));
+}).unless({ path: ['/users/authenticate', '/users/register']}));
 
 
 //Adding body parser for handling request and response objects.

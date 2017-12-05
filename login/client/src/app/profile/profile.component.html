@@ -1,29 +1,6 @@
-<div class="col-md-6 col-md-offset-3">
+<div class="container">
     <h1>Hi {{currentUser.firstName}}!</h1>
-    </div>
-    <div class="userInfo col-md-6 col-md-offset-3">
-    <ul>
-        <li>
-            <p>Username:</p>{{currentUser.username}}</li>
-        <li>
-            <p>FirstName:</p>{{currentUser.firstName}}</li>
-        <li>
-            <p>LastName:</p>{{currentUser.lastName}}</li>
-        <li>
-            <p>Identity:</p>{{currentUser.identity}}</li>
-        <li>
-            <p>Major:</p>{{currentUser.major}}</li>
-        <li>
-            <p>user._id:</p>{{currentUser._id}}</li>
-        <li>
-            <p>token:</p>{{currentUser.token}}</li>
-        <li>
-            <p>Email:</p>{{currentUser.email}}</li>
-        <li>
-            <p>Created Date</p>{{currentUser.created_date}}</li>
-    </ul>
-    </div>
-    <div class="col-md-6 col-md-offset-3">
+    <!-- <div class="col-md-6 col-md-offset-3"> -->
         <h2>Update</h2>
         <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">

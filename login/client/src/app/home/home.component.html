@@ -1,30 +1,28 @@
 
-      <div class="col-md-6 col-md-offset-3">
+      <div class="container" style="border:solid; width:100%; margin:0;">
             <h1>Hi {{currentUser.firstName}}!</h1>
             <p>You're logged in!!</p>
             <h3>User Information:</h3>
-                <ul>
+                <ul class="card card-block">
                     <li *ngIf="currentUser.image">
                         <img src={{currentUser.image}}>
                     </li>
                     <li>
-                        <p>Username:</p>{{currentUser.username}}</li>
+                        <p>Username: <b>{{currentUser.username}}</b></p></li>
                     <li>
-                        <p>FirstName:</p>{{currentUser.firstName}}</li>
+                        <p>FirstName: <b>{{currentUser.firstName}}</b></p></li>
                     <li>
-                        <p>LastName:</p>{{currentUser.lastName}}</li>
+                        <p>LastName: <b>{{currentUser.lastName}}</b></p></li>
                     <li>
-                        <p>Identity:</p>{{currentUser.identity}}</li>
+                        <p>Identity: <b>{{currentUser.identity}}</b></p></li>
                     <li>
-                        <p>Major:</p>{{currentUser.major}}</li>
+                        <p>Major: <b>{{currentUser.major}}</b></p></li>
+                    <!-- <li><p>user._id:</p>{{currentUser._id}}</li> -->
+                    <!-- <li><p>token:</p>{{currentUser.token}}</li> -->
                     <li>
-                        <p>user._id:</p>{{currentUser._id}}</li>
+                        <p>Email: <b>{{currentUser.email}}</b></p></li>
                     <li>
-                        <p>token:</p>{{currentUser.token}}</li>
-                    <li>
-                        <p>Email:</p>{{currentUser.email}}</li>
-                    <li>
-                        <p>Created Date</p>{{currentUser.created_date}}</li>
+                        <p>Created Date: <b>{{currentUser.created_date | date:'shortTime'}}</b></p></li>
                 </ul>
                 <!-- </div> -->
             <button [routerLink]="['/profile']" class="btn btn-primary" ng-click="test()">Edit Profile</button>

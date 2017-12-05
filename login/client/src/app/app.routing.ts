@@ -14,10 +14,10 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent },
     { path: 'home', component:HomeComponent,canActivate:[AuthGuard]},
-    { path: 'admin', component:AdminComponent},
+    { path: 'admin', component:AdminComponent,canActivate:[AuthGuard]},
     { path: 'profile', component:ProfileComponent,canActivate:[AuthGuard]},
-    { path: 'questions', component: QuestionComponent, pathMatch:'full'},
-    { path: 'questions/:id', component: QuestionDetailComponent,pathMatch: 'full'},
+    { path: 'questions', component: QuestionComponent ,canActivate:[AuthGuard],pathMatch:'full'},
+    { path: 'questions/:id', component: QuestionDetailComponent,canActivate:[AuthGuard],pathMatch: 'full'},
     // otherwise redirect to home
     { path: '**', redirectTo: 'home' }
 ];
