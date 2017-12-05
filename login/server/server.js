@@ -23,7 +23,7 @@ app.use(expressJwt({
         }
         return null;
     }
-}).unless({ path: ['/users/authenticate', '/users/register'] }));
+}).unless({ path: ['/users/authenticate', '/users/register','/api/questions','/api/questions/:questionId'] }));
 
 
 //Adding body parser for handling request and response objects.
@@ -32,6 +32,12 @@ app.use(bodyParser.urlencoded({
 extended: true
 }));
 app.use(bodyParser.json());
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 //Initialize app
 let initApp = require('./app');

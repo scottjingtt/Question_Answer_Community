@@ -8,7 +8,7 @@ import { routing } from './app.routing';
 import { customHttpProvider } from './http/custom-http';
 import { AlertComponent } from './directives/alert.component';
 // import { AuthGuard } from './_guards/index';
-import { AlertService, UserService,AuthenticationService } from './services/index';
+import { AlertService, UserService,AuthenticationService,QuestionsService } from './services/index';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent} from './register/register.component';
@@ -16,6 +16,8 @@ import {AdminComponent} from './admin/admin.component';
 import {AuthGuard} from './guards/auth.guard';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
+import { QuestionComponent} from './question/question.component';
+import { QuestionDetailComponent } from './question-detail/question-detail.component';
 // import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @NgModule({
@@ -26,7 +28,9 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     LoginComponent,
     AdminComponent,
-    ProfileComponent
+    ProfileComponent,
+    QuestionComponent,
+    QuestionDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,8 @@ import { ProfileComponent } from './profile/profile.component';
     AuthGuard,
     AlertService,
     AuthenticationService,
-    UserService
+    UserService,
+    QuestionsService
   ],
   bootstrap: [AppComponent]
 })
