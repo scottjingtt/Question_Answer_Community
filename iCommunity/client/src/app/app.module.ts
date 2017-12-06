@@ -21,7 +21,7 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
 import { NavigationComponent } from './navigation/navigation.component';
 import { QuestionCategaryComponent } from './question-categary/question-categary.component';
 import { NoticeComponent } from './notice/notice.component';
-import { QuestionSearchComponent } from './question-search/question-search.component';
+import { LocalSearchComponent } from './local-search/local-search.component';
 import { UniversitySearchComponent } from './university-search/university-search.component';
 import { PlacesService } from './services/places.service';
 import { UniversitySearchResultComponent} from './university-search-result/university-search-result.component';
@@ -41,7 +41,7 @@ import { UniversitySearchResultComponent} from './university-search-result/unive
     NavigationComponent,
     QuestionCategaryComponent,
     NoticeComponent,
-    QuestionSearchComponent,
+    LocalSearchComponent,
     UniversitySearchComponent,
     UniversitySearchResultComponent
   ],

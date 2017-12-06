@@ -20,7 +20,8 @@
                     <!-- <li><p>user._id:</p>{{currentUser._id}}</li> -->
                     <!-- <li><p>token:</p>{{currentUser.token}}</li> -->
                     <li>
-                        <p>Email: <b>{{currentUser.email}}</b></p></li>
+                        <p>Email: <a href="mailto:currentUser.email"><b>{{currentUser.email}}</b></a></p>
+                    </li>
                     <li>
                         <p>Created Date: <b>{{currentUser.created_date | date:'shortTime'}}</b></p></li>
                 </ul>
