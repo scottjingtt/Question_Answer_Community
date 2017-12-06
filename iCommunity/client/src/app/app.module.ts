@@ -18,6 +18,10 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { QuestionComponent} from './question/question.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { QuestionCategaryComponent } from './question-categary/question-categary.component';
+import { NoticeComponent } from './notice/notice.component';
+import { QuestionSearchComponent } from './question-search/question-search.component';
 // import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @NgModule({
@@ -30,7 +34,11 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
     AdminComponent,
     ProfileComponent,
     QuestionComponent,
-    QuestionDetailComponent
+    QuestionDetailComponent,
+    NavigationComponent,
+    QuestionCategaryComponent,
+    NoticeComponent,
+    QuestionSearchComponent
   ],
   imports: [
     BrowserModule,
