@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './guards/auth.guard';
 import { QuestionComponent} from './question/question.component';
 import { QuestionDetailComponent} from './question-detail/question-detail.component';
+import { UniversitySearchComponent } from './university-search/university-search.component';
 // import {QuestionComponent} from '/question/question.component';
 
 const appRoutes: Routes = [
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     { path: 'profile', component:ProfileComponent,canActivate:[AuthGuard]},
     { path: 'questions', component: QuestionComponent,pathMatch:'full'},
     { path: 'questions/:id', component: QuestionDetailComponent,canActivate:[AuthGuard],pathMatch: 'full'},
+    { path: 'university', component: UniversitySearchComponent},
     // otherwise redirect to home
     { path: '**', redirectTo: 'home' }
 ];

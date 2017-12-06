@@ -22,6 +22,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { QuestionCategaryComponent } from './question-categary/question-categary.component';
 import { NoticeComponent } from './notice/notice.component';
 import { QuestionSearchComponent } from './question-search/question-search.component';
+import { UniversitySearchComponent } from './university-search/university-search.component';
+import { PlacesService } from './services/places.service';
+import { UniversitySearchResultComponent} from './university-search-result/university-search-result.component';
 // import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @NgModule({
@@ -38,7 +41,9 @@ import { QuestionSearchComponent } from './question-search/question-search.compo
     NavigationComponent,
     QuestionCategaryComponent,
     NoticeComponent,
-    QuestionSearchComponent
+    QuestionSearchComponent,
+    UniversitySearchComponent,
+    UniversitySearchResultComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,8 @@ import { QuestionSearchComponent } from './question-search/question-search.compo
     AlertService,
     AuthenticationService,
     UserService,
-    QuestionsService
+    QuestionsService,
+    PlacesService
   ],
   bootstrap: [AppComponent]
 })
