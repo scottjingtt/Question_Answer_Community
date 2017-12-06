@@ -44,10 +44,10 @@ export class UniversitySearchComponent implements OnInit {
 
 
 				//Init places service
-				this.placesService = new google.maps.places.PlacesService(this.map);
+				// this.placesService = new google.maps.places.PlacesService(this.map);
 
 				//Marker that shows your current position
-				this.initDefaultMarker();
+				// this.initDefaultMarker();
 
 			});
 		}
