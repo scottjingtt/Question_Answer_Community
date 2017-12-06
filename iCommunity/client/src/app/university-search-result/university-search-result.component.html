@@ -1,5 +1,5 @@
 
-<h3 class="tac">We are showing	{{ universities.length }} universities in the radius of {{ radius }} meters.</h3>
+<h4 class="tac">There are {{ universities.length }} universities in the radius of {{ radius }} meters.</h4>
 <table class="table table-hover table-bordered">
 	<tr>
 		<th>
@@ -19,7 +19,7 @@
 	<tr *ngFor="let rest of universities; let i = index" class="class">
 
 		<td>
-			#{{i + 1}}
+			{{i + 1}}
 		</td>
 		<td>
 			{{ rest.name }}
@@ -28,12 +28,8 @@
 			{{ rest.vicinity }}
 		</td>
 		<td>
-			<span class="badge badge-unknown">	{{ (rest.rating) ? rest.rating : 'Unknown' }}</span>
+			<span [ngClass] = "{'badge badge-unknown':!rest.rating}">{{ (rest.rating) ? rest.rating : 'Unknown' }}</span>
 		</td>
-		<!-- <td>
-			<span class="badge badge-{{(rest.opening_hours.open_now) ? 'open' : 'closed'}}" *ngIf="rest.opening_hours">{{ (rest.opening_hours.open_now) ? 'Open' : 'Closed' }}</span>
-			<span *ngIf="!rest.opening_hours" class="badge badge-unknown">Unknown</span>
-		</td> -->
 	</tr>
 </table>
 

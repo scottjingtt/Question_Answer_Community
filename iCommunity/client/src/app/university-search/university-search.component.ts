@@ -38,10 +38,8 @@ export class UniversitySearchComponent implements OnInit {
 				this.location.lng = position.coords.longitude;
 				this.cdRef.detectChanges();
 
-
 				//Init map
 				this.initMap(this.location);
-
 
 				//Init places service
 				this.placesService = new google.maps.places.PlacesService(this.map);
@@ -53,8 +51,8 @@ export class UniversitySearchComponent implements OnInit {
 		}
 	}
 
-	searchRestaurants(radius: number) {
-
+	// search universities function
+	searchUniversities(radius: number) {
 		this.searchMode = true;
 
 		//Parameteres for searching nearby universities
@@ -66,18 +64,14 @@ export class UniversitySearchComponent implements OnInit {
 
 		//Search nearby places
 		this.placesService.nearbySearch(this.searchArgs, (results, status, pagination) => {
-
 			//Show markers on the map
 			this.showMarkers(results);
 			//Detect all changes that will occur
 			this.cdRef.detectChanges();
-
 			//Store button for showing more results
 			var moreButton = document.getElementById('more');
-
 			//Show more results
 			if (pagination.hasNextPage) {
-
 				this.lastPage = false;
 				this.cdRef.detectChanges();
 				moreButton.addEventListener('click', function () {
@@ -88,11 +82,8 @@ export class UniversitySearchComponent implements OnInit {
 				this.lastPage = true;
 				this.cdRef.detectChanges();
 			}
-
 		});
-
-
-	} //end of search universities function
+	} 
 
 	showMarkers(places) {
 		let bounds = new google.maps.LatLngBounds();
@@ -155,11 +146,7 @@ export class UniversitySearchComponent implements OnInit {
 			title: 'Your Current Location'
 		});
 	}
-
-
 }
-
-
 
 interface Location {
 	lng: number;
