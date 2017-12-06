@@ -20,4 +20,6 @@ module.exports = function (app) {
         .post(userController.authenticate);
     app.route('/users/register')
         .post(userController.register);
+    app.route('/users/keysearch')
+        .get(userController.get);
 };

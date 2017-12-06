@@ -29,6 +29,13 @@ exports.search = function (params, callback) {
         callback(users);
     });
 };
+exports.searchProfessors = function (params, callback) {
+    // User.find(params, function (err, users) {
+        User.find({major:params,identity:Professor},function(err,users){
+        throwError(err);
+        callback(users);
+    });
+};
 //CRUD: create, read, update, delete
 
 
@@ -152,18 +159,6 @@ exports.updateInfo = function(userID, userParam) {
             }, function (err, user) {
                 if (err) deferred.reject(err.name + ': ' + err.message);
                 deferred.resolve(user);
-                // deferred.resolve({
-                //     _id: user._id,
-                //     username: user.username,
-                //     firstName: user.firstName,
-                //     lastName: user.lastName,
-                //     created_date: user.created_date,
-                //     identity: user.identity,
-                //     major: user.major,
-                //     email:user.email,
-                //     image:user.image,
-                //     token: jwt.sign({ sub: user._id }, "iCommunity")
-                // });
                 console.log(user.image);
             });
     }

@@ -10,9 +10,11 @@ export class UserService {
     getAll() {
         return this.http.get('/users').map((response: Response) => response.json());
     }
-
     getById(_id: string) {
         return this.http.get('/users/' + _id).map((response: Response) => response.json());
+    }
+    getByKey(key:string){
+        return this.http.get('/users/keysearch',key).map((response: Response) => response.json());
     }
 
     create(user: User) {

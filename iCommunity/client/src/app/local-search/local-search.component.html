@@ -1,16 +1,28 @@
 <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">
-                Find Questions/Professors
-            </h3>
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            Find Questions/Professors
+        </h3>
+    </div>
+    <div class="panel-body">
+        <form>
+            <div class="form-group">
+                <input class="form-control form-control-lg" type="text" [(ngModel)]="keyword" name="keyword" placeholder="Please enter keywords">
+            </div>
+            <button type="submit" class="btn btn-default" (click)="localSearchQuestions()">Find Questions</button>
+            <button type="submit" class="btn btn-default" (click)="localSearchProfessors()">Find Professors</button>
+        </form>
+    </div>
+    <div class="container" id="local_search_results">
+        <h2>Results</h2>
+        <div class="row" *ngFor="let result of localResults">
+            <div class="card card-block">
+                <h4 *ngIf="showQuestions" class="card-title">{{ result.title}}</h4>
+                <h4 *ngIf="showProfessors" class="card-title">Professor: {{ result.lastName}}</h4>
+                <p>
+                    <small>created on {{ result.created_date | date:'short'}}</small>
+                </p>
+            </div>
         </div>
-        <div class="panel-body">
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Key words">
-                </div>
-                <button type="submit" class="btn btn-default">Find Questions</button>
-                <button type="submit" class="btn btn-default">Find Professors</button>
-            </form>
-        </div>
+    </div>
 </div>

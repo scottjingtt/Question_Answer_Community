@@ -65,6 +65,13 @@ exports.get = function (request, response) {
     });
 };
 
+exports.getProfessors = function (request, response) {
+    console.log(request.params.options);
+    userService.searchProfessors({major:request.params.options}, function (user) {
+        response.json(user);
+    });
+};
+
 /**
  * Updates and returns a user object in JSON.
  *
