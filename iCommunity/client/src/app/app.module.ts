@@ -25,6 +25,8 @@ import { LocalSearchComponent } from './local-search/local-search.component';
 import { UniversitySearchComponent } from './university-search/university-search.component';
 import { PlacesService } from './services/places.service';
 import { UniversitySearchResultComponent} from './university-search-result/university-search-result.component';
+import { QuestionSearchComponent } from './question-search/question-search.component';
+import { ProfessorSearchComponent } from './professor-search/professor-search.component';
 // import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @NgModule({
@@ -43,7 +45,9 @@ import { UniversitySearchResultComponent} from './university-search-result/unive
     NoticeComponent,
     LocalSearchComponent,
     UniversitySearchComponent,
-    UniversitySearchResultComponent
+    UniversitySearchResultComponent,
+    QuestionSearchComponent,
+    ProfessorSearchComponent
   ],
   imports: [
     BrowserModule,
