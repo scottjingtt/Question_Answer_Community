@@ -8,6 +8,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { QuestionComponent} from './question/question.component';
 import { QuestionDetailComponent} from './question-detail/question-detail.component';
 import { UniversitySearchComponent } from './university-search/university-search.component';
+import { QuestionSearchComponent } from './question-search/question-search.component';
+import { ProfessorSearchComponent } from './professor-search/professor-search.component';
 // import {QuestionComponent} from '/question/question.component';
 
 const appRoutes: Routes = [
@@ -19,6 +21,8 @@ const appRoutes: Routes = [
     { path: 'questions', component: QuestionComponent,pathMatch:'full'},
     { path: 'questions/:id', component: QuestionDetailComponent,canActivate:[AuthGuard],pathMatch: 'full'},
     { path: 'university', component: UniversitySearchComponent},
+	{ path: 'questionSearch', component: QuestionSearchComponent},
+	{ path: 'professorSearch', component: ProfessorSearchComponent},
     // otherwise redirect to home
     { path: '**', redirectTo: 'home' }
 ];
