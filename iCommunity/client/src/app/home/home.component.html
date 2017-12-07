@@ -30,4 +30,5 @@
             <button [routerLink]="['/login']" class="btn btn-primary" ng-click="test()">Log out</button>
             <button [routerLink]="['/questions']" class="btn btn-primary" ng-click="test()">Questions</button>
             <button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/admin']" class="btn btn-primary" ng-click="test()">Admin Page</button>
+			<button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/noticeEdit']" class="btn btn-primary" ng-click="test()">Edit Notice</button>
         </div>

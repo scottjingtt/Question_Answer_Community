@@ -40,8 +40,10 @@ export class UserService {
                 currentUser.major=user.major,
                 currentUser.email=user.email,
                 currentUser.image=user.image,
+                currentUser.notice=user.notice,
+                console.log("SERVICE " + currentUser);
+
                 localStorage.setItem('currentUser',JSON.stringify(currentUser));
-                // localStorage.setItem('currentUser',JSON.stringify(user));
             }
         });
     }

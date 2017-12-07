@@ -27,6 +27,7 @@ import { PlacesService } from './services/places.service';
 import { UniversitySearchResultComponent} from './university-search-result/university-search-result.component';
 import { QuestionSearchComponent } from './question-search/question-search.component';
 import { ProfessorSearchComponent } from './professor-search/professor-search.component';
+import { NoticeEditComponent } from './notice-edit/notice-edit.component';
 // import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @NgModule({
@@ -47,7 +48,8 @@ import { ProfessorSearchComponent } from './professor-search/professor-search.co
     UniversitySearchComponent,
     UniversitySearchResultComponent,
     QuestionSearchComponent,
-    ProfessorSearchComponent
+    ProfessorSearchComponent,
+    NoticeEditComponent
   ],
   imports: [
     BrowserModule,

@@ -10,4 +10,5 @@ export class User {
     tags:[string];
     created_date:Date;
     image:string;
+    notice:string;
 }

@@ -63,6 +63,10 @@ let UserSchema = new Schema({
     },
     hash:{
         type: String
+    },
+	 notice:{
+        type: String,
+        default: "No Notice"
     }
 
 }, {

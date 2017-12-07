@@ -202,6 +202,7 @@ exports.authenticate = function (username, password) {
                 major: user.major,
                 email:user.email,
                 image:user.image,
+                notice:user.notice,
                 token: jwt.sign({ sub: user._id }, "iCommunity")
             });
             console.log("auth service successful -- ");

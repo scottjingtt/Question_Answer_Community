@@ -10,6 +10,7 @@ import { QuestionDetailComponent} from './question-detail/question-detail.compon
 import { UniversitySearchComponent } from './university-search/university-search.component';
 import { QuestionSearchComponent } from './question-search/question-search.component';
 import { ProfessorSearchComponent } from './professor-search/professor-search.component';
+import { NoticeEditComponent } from './notice-edit/notice-edit.component';
 // import {QuestionComponent} from '/question/question.component';
 
 const appRoutes: Routes = [
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     { path: 'university', component: UniversitySearchComponent},
 	{ path: 'questionSearch', component: QuestionSearchComponent},
 	{ path: 'professorSearch', component: ProfessorSearchComponent},
+	{ path: 'noticeEdit', component: NoticeEditComponent},
     // otherwise redirect to home
     { path: '**', redirectTo: 'home' }
 ];
