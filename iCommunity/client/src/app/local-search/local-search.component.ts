@@ -24,7 +24,7 @@ export class LocalSearchComponent {
       });
     }
     localSearchProfessors() {
-      this.userService.getByKey(this.keyword).subscribe(professors =>
+      this.userService.getAll().subscribe(professors =>
         {
           this.showProfessors = true;
           this.showQuestions = false;
