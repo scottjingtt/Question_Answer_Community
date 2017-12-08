@@ -1,3 +1,15 @@
-<p>
-  professor-search works!
-</p>
+<div class="container" id="users">
+  <h2>All Users</h2>
+    <div class="row" *ngFor="let user of users">
+      <div class="card card-block">
+        <h4 class="card-title">Name: <b>{{user.firstName}} {{user.lastName}}</b></h4>
+        <ul>                   
+          <li><p>Identity: {{user.identity}}</p></li> 
+          <li><p>Major: {{user.major}}</p></li>         
+        </ul>
+      </div>
+    </div>
+    
+</div>
+<div><button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Goto home</button></div>
+<!-- <a (click)="deleteUser(user._id)">Delete</a> -->
