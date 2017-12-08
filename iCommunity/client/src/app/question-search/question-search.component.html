@@ -1,3 +1,10 @@
-<p>
-  question-search works!
-</p>
+<div class="container" id="questions">
+  <h2>Questions Search</h2>
+    <div class="row" *ngFor="let question of questions">
+      <div class="card card-block">
+        <h4 class="card-title">{{ question.title }}</h4>
+        <p><small>created on {{ question.created_date | date:'short'}}</small></p>
+        <a [routerLink]="['/questions', question._id]" class="card-link">View Answers</a>
+      </div>
+    </div>
+</div>
