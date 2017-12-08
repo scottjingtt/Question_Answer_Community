@@ -3,6 +3,7 @@ import { User } from '../models/user';
 import { UserService,AlertService } from '../services/index';
 import {Router} from '@angular/router';
 
+
 @Component({
   selector: 'app-notice-edit',
   templateUrl: './notice-edit.component.html',
@@ -13,6 +14,7 @@ export class NoticeEditComponent implements OnInit {
   currentUser: User;
   tempemail:String;
   model:any={};
+  users:any = [];
 
   constructor(private userService: UserService,
       private router: Router,
@@ -22,24 +24,42 @@ export class NoticeEditComponent implements OnInit {
   }
 
   ngOnInit() {
-      // this.loadAllUsers();
+       this.loadAllUsers();
   }
   loading = false;
 
   update() {
     this.model._id = this.currentUser._id;
     this.loading = true;
-    this.userService.update(this.model)
-        .subscribe(
-            data => {
-                this.alertService.success('Update successful', true);
-                this.router.navigate(['/home']);
-            },
-            error => {
-                this.alertService.error(error);
-                this.loading = false;
-            });
+            let someArray = this.users;               
+            for (let entry of someArray) {                
+              entry.notice=this.currentUser.notice;              
+              this.userService.update(entry)
+              .subscribe(
+                  data => {
+                      this.alertService.success('Update successful', true);
+                      this.router.navigate(['/home']);
+                  },
+                  error => {
+                      this.alertService.error(error);
+                      this.loading = false;
+                  });
+            }     
+            
             
 }
   
+loadAllUsers() {
+  this.userService.getAll().subscribe(users => { this.users = users; });
 }
+
+loadAll(){
+  this.userService.getAll().subscribe(users =>
+      {
+        this.users = users; 
+    });
+}
+
+
+}
+
