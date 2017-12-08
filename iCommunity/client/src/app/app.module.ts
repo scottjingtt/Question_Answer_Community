@@ -28,6 +28,8 @@ import { UniversitySearchResultComponent} from './university-search-result/unive
 import { QuestionSearchComponent } from './question-search/question-search.component';
 import { ProfessorSearchComponent } from './professor-search/professor-search.component';
 import { NoticeEditComponent } from './notice-edit/notice-edit.component';
+import { FormFieldsComponent } from './form-fields/form-fields.component';
+import { RepoComponent } from './form-fields/repo/repo.component';
 // import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @NgModule({
@@ -49,7 +51,9 @@ import { NoticeEditComponent } from './notice-edit/notice-edit.component';
     UniversitySearchResultComponent,
     QuestionSearchComponent,
     ProfessorSearchComponent,
-    NoticeEditComponent
+    NoticeEditComponent,
+    FormFieldsComponent,
+    RepoComponent
   ],
   imports: [
     BrowserModule,
