@@ -10,16 +10,12 @@ export class RepoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
   }
 
   @Input() repo:any;
   @Input() i:number;
   @Input() repoIndex:number;
-  @Input() searchOpenedIssues:any;
   @Input() issues:any[];
-  
-  
-  
+  @Input() searchOpenedIssues:any;
 
 }

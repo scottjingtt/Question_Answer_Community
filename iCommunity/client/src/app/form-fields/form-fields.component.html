@@ -2,19 +2,19 @@
     <div class="labels">
 
         <label>
-          Username: 
-         <input   type="text" placeholder="Search repo by author...">  
-      </label>
+            Username: 
+            <input [formControl]="username" type="text" placeholder="Search repo by author...">
+        </label>
         <label>
-          Page:
-           <input type="number" placeholder="Default:1"> 
-          out of
-           <span class="repo-count">{{repoTotalCount | ghpageCount}}</span>  
-      </label>
+            Page:
+            <input type="number" [formControl]="pageNumber" min="1" placeholder="Default:1">
+            out of
+            <span class="repo-count">{{repoTotalCount | ghpageCount}}</span>
+        </label>
     </div>
     <div class="messages">
         <div *ngIf="waiting"><i>waiting...</i></div>
     </div>
 </header>
-<app-repo>
+<app-repo class="repo repo{{i}}" *ngFor="let repo of repositories;let i=index" [repo]="repo" [i]="i" [repoIndex]="repoIndex">
 </app-repo>
