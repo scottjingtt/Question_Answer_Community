@@ -19,6 +19,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { QuestionComponent} from './question/question.component';
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { FooterComponent } from './footer/footer.component';
 import { QuestionCategaryComponent } from './question-categary/question-categary.component';
 import { NoticeComponent } from './notice/notice.component';
 import { LocalSearchComponent } from './local-search/local-search.component';
@@ -45,6 +46,7 @@ import { GhpageCountPipe } from './pipes/ghpage-count.pipe';
     QuestionComponent,
     QuestionDetailComponent,
     NavigationComponent,
+    FooterComponent,        
     QuestionCategaryComponent,
     NoticeComponent,
     LocalSearchComponent,
