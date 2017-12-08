@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , ChangeDetectorRef} from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-form-fields',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormFieldsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public cdr:ChangeDetectorRef) { }
 
   ngOnInit() {
   }
+
+  // fields
+ 
+  username = new FormControl();
+  pageNumber = new FormControl(1);
+  GHform = new FormGroup({
+      
+      username: this.username,
+      pageNumber: this.pageNumber,
+  });
+
+  //results
+  repositories = [];
+  
+  repoIndex = undefined;
+  repoTotalCount = undefined;
+
+  // messages
+  waiting = false;
 
 }
