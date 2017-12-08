@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-repo',
@@ -13,7 +13,12 @@ export class RepoComponent implements OnInit {
     
   }
 
- 
+  @Input() repo:any;
+  @Input() i:number;
+  @Input() repoIndex:number;
+  @Input() searchOpenedIssues:any;
+  @Input() issues:any[];
+  
   
   
 
