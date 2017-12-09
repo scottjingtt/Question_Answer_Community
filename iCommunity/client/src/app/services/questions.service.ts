@@ -11,8 +11,6 @@ export class QuestionsService {
   constructor(private http: Http) { }
 
   getAllQuestions(){
-    console.log(this.http);
-    
     // return this.http.get('http://localhost:3000/api/questions').map(res => res.json());
     return this.http.get('/api/questions').map((response: Response) => response.json());
     

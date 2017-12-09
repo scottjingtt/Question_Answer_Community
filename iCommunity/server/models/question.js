@@ -37,7 +37,21 @@ let QuestionSchema = new Schema({
      * Question anwsers.
      */
     answers: {
-        type: [{ body: String, date: Date }],
+        type: [{ body: String, date: Date, creator_id: String, creator: String}],
+    },
+    /**
+     * Question creator.
+     */
+    creator: {
+        type: {id: String, user: String}
+        // default: "THis is my creator"
+    },
+    /**
+     * Question category.
+     */
+    category:{
+        type: String
+        // default:"Nothing"
     }
 }, {
     versionKey: false

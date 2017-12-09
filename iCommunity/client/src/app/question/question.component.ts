@@ -12,13 +12,15 @@ export class QuestionComponent implements OnInit {
 
   questions: any = [];
   newQuestion: any;
-  // selectedQuestion: any;
+  questionCategory: any;
+  categories: any = ["Science", "Engineering", "History", "Culture"];
 
   constructor(private questionsService: QuestionsService) { }
 
   ngOnInit() {
     this.questionsService.getAllQuestions().subscribe(questions =>
       {
+        console.log("user is " + JSON.parse(localStorage.getItem("currentUser"))._id);
         console.log(questions);
         this.questions = questions; 
         this.sortOnTime();
@@ -35,16 +37,21 @@ export class QuestionComponent implements OnInit {
   }
 
   postQuestion(){
-    var response = '{"title" : "' + this.newQuestion + '"}';
-    console.log(response);
+
+    var response = '{"title" : "' + this.newQuestion + '", "creator" : {"id": "' + JSON.parse(localStorage.getItem("currentUser"))._id+ '", "user" : "' + JSON.parse(localStorage.getItem("currentUser")).username +'"}, "category": "' + this.questionCategory  + '"}';
+    console.log("category is " + this.questionCategory);
     this.questionsService.postQuestion(JSON.parse(response));
-    
+    this.sortOnTime();
     // console.log(this.questions);
     // this.questionsService.getAllQuestions().subscribe(questions =>
     //   { this.questions = questions; 
     // });
     // console.log(this.questions);
     window.location.reload();
+  }
+
+  searchQuestion(){
+    JSON.parse(this.questions)
   }
 
 }

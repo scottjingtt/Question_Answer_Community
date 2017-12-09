@@ -32,7 +32,7 @@ export class QuestionDetailComponent implements OnInit {
   }
   postAnswer(){
     console.log(this.newAnswer);
-    this.answers.push({"body" : this.newAnswer, "date" : Date.now()});
+    this.answers.push({"body" : this.newAnswer, "date" : Date.now(), "creator_id" : JSON.parse(localStorage.getItem("currentUser"))._id, "creator" : JSON.parse(localStorage.getItem("currentUser")).username});
     this.selectedQuestion["answers"] = this.answers;
     this.questionsService.updateQuestion(this.selectedQuestion, this.selectedQuestion["_id"]);
     this.sortOnTime();

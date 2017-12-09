@@ -5,6 +5,19 @@
           <label class="col-form-label">Question</label>
           <input class="form-control form-control-lg" type="text" [(ngModel)]="newQuestion" name="question" ng-model="newQuestion" placeholder="Please enter a question">
         </div>
+        <div class="form-group">
+          <label class="col-form-label">Category</label>
+          <!-- <select ng-model="questionCategory" class="form-control form-control-lg selectpicker">
+            <option style="display:none"></option>
+            <option>Engineering</option>
+            <option>Science</option>
+            <option>Culture</option>
+            <option>History</option>
+          </select> -->
+          <select [(ngModel)]="questionCategory" name="category" class="form-control form-control-lg selectpicker">
+              <option *ngFor="let category of categories">{{ category }}</option>
+          </select>
+        </div>
         <button class="btn btn-primary">Post</button>
         <button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Cancel to home</button>
       </form>
