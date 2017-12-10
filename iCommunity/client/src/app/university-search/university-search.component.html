@@ -1,5 +1,5 @@
 <div class="container">
-	<div *ngIf="!searchMode">				
+	<div >				
 		<h3> Set the desired radius of universities nearby.</h3>		
 		<input type="number" class="form-control" [(ngModel)]="radius" placeholder="Npr. 1000" min="1">
 		<button (click)="searchUniversities(radius)" class="btn btn-primary block-btn" [disabled]="!map || !radius">Search universities</button>
