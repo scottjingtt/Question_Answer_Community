@@ -55,7 +55,7 @@ import { FormFieldsComponent } from './form-fields/form-fields.component';
     ProfessorSearchComponent,
     NoticeEditComponent,
     FormFieldsComponent,
-    HttpClientModule
+    
     
   
   ],
@@ -65,6 +65,7 @@ import { FormFieldsComponent } from './form-fields/form-fields.component';
     HttpModule,
     routing,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     customHttpProvider,
