@@ -6,7 +6,7 @@
         <div class="col-sm-3">
             <local-search></local-search>
             <notice *ngIf="currentUser"></notice>
-            <login></login>
+            <login *ngIf="!currentUser"></login>
         </div>
         <div class="col-sm-9">
             <div class="jumbotron">

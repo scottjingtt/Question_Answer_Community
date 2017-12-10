@@ -39,11 +39,13 @@ export class LoginComponent implements OnInit {
                     this.alertService.error("returnURL: " + this.returnUrl);
                     // this.router.navigate([this.returnUrl]);
                     this.router.navigateByUrl(this.returnUrl);
+                    location.reload();
                 },
                 error => {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+        
     }
 
 }

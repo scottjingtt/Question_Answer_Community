@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     { path: 'noticeEdit', component: NoticeEditComponent},
     { path: 'search', component: FormFieldsComponent},
     // otherwise redirect to home
-    { path: '**', redirectTo: 'home' }
+    { path: '**', redirectTo: 'questions' }
 ];
 
 export const routing = RouterModule.forRoot(appRoutes);

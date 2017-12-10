@@ -29,6 +29,7 @@ export class NavigationComponent implements OnInit {
     console.log("logout click");
     this.currentUser = null;
     this.authenticationService.logout();
+    location.reload();
   }
 
 }
