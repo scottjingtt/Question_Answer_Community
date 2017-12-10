@@ -1,0 +1,28 @@
+<div *ngIf="selectedQuestion" class="container">
+  <h1>{{ selectedQuestion.title }} </h1>
+  <small>Question posted date : {{selectedQuestion.created_date | date:'short'}}</small>
+  <hr>
+
+  <div class="container">
+    <form (ngSubmit)="postAnswer()">
+    <div class="form-group">
+      <label class="col-form-label">Post Answer</label>
+      <input class="form-control form-control-lg" type="textarea" [(ngModel)]="newAnswer" name="answer" ng-model="newAnswer" placeholder="Please enter a answer">
+    </div>
+    <button class="btn btn-primary">Post</button>
+  </form>
+  </div>
+  <div *ngIf="selectedQuestion.answers.length == 0"class="container">
+      <h2>There is no anwsers available for this question by this point.</h2>
+  </div>
+  <div *ngIf="selectedQuestion.answers.length != 0"class="container">
+    <h2>Answers:</h2>
+    <div class="row" *ngFor="let answer of selectedQuestion.answers">
+        <div class="card card-block">
+          <h4 class="card-title">{{ answer.body }}</h4>
+          <small>{{ answer.date | date:'short' }}</small>
+        </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="gotolist()">Back</button>
+</div>
