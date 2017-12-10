@@ -2,7 +2,7 @@ import { Resolve, Router, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../services/questions.service';
-
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-question-detail',
@@ -11,13 +11,17 @@ import { QuestionsService } from '../services/questions.service';
 })
 export class QuestionDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private questionsService: QuestionsService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private questionsService: QuestionsService) {
+
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+   }
 
   id: any;
   selectedQuestion: any;
   answers: any = [];
   newAnswer: any;
-
+  currentUser: User;
+  
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
     this.questionsService.getQuestion(this.id).subscribe(question =>

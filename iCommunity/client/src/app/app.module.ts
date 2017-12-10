@@ -55,8 +55,7 @@ import { FormFieldsComponent } from './form-fields/form-fields.component';
     ProfessorSearchComponent,
     NoticeEditComponent,
     FormFieldsComponent
-    
-    
+
   
   ],
   imports: [

@@ -12,14 +12,34 @@ import { Observable } from 'rxjs/Observable';
 
 
 export class FormFieldsComponent implements OnInit {
+  userData: any;
+  repoData: any[];
+  username: string;
 
-  constructor(
-   ) {
-    /***
-    **  the input feilds send request to GitHubSearchService 
-    the response is stored in repository array
-    ***/
+  constructor(private githubService: GithubSearchService) {
 
+    this.userData = false;
+    }
+
+    searchUser(){
+      this.githubService.updateUser(this.username);
+
+      this.githubService.getUserData()
+      .subscribe(
+        users =>{
+        this.userData = users;
+        console.log(users);
+      }
+      );
+
+      this.githubService.getRepoData()
+      .subscribe(
+        repos =>{
+          this.repoData=repos;
+          console.log(repos);
+        }
+      );
+      
     }
 
   ngOnInit() {

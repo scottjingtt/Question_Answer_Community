@@ -4,7 +4,7 @@
     <hr>
   
     <div class="container">
-      <form (ngSubmit)="postAnswer()">
+      <form (ngSubmit)="postAnswer()" *ngIf="currentUser.identity == 'Professor'">
       <div class="form-group">
         <label class="col-form-label">Post Answer</label>
         <input class="form-control form-control-lg" type="textarea" [(ngModel)]="newAnswer" name="answer" ng-model="newAnswer" placeholder="Please enter a answer">
