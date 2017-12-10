@@ -29,7 +29,7 @@ import { QuestionSearchComponent } from './question-search/question-search.compo
 import { ProfessorSearchComponent } from './professor-search/professor-search.component';
 import { NoticeEditComponent } from './notice-edit/notice-edit.component';
 import { FormFieldsComponent } from './form-fields/form-fields.component';
-import { RepoComponent } from './form-fields/repo/repo.component';
+
 import { GhpageCountPipe } from './pipes/ghpage-count.pipe';
 // import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -54,7 +54,7 @@ import { GhpageCountPipe } from './pipes/ghpage-count.pipe';
     ProfessorSearchComponent,
     NoticeEditComponent,
     FormFieldsComponent,
-    RepoComponent,
+    
     GhpageCountPipe
   ],
   imports: [
