@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { routing } from './app.routing';
 
+import { HttpClientModule } from '@angular/common/http';
 import { customHttpProvider } from './http/custom-http';
 import { AlertComponent } from './directives/alert.component';
 // import { AuthGuard } from './_guards/index';
@@ -30,7 +31,7 @@ import { ProfessorSearchComponent } from './professor-search/professor-search.co
 import { NoticeEditComponent } from './notice-edit/notice-edit.component';
 import { FormFieldsComponent } from './form-fields/form-fields.component';
 
-import { GhpageCountPipe } from './pipes/ghpage-count.pipe';
+
 // import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @NgModule({
@@ -54,6 +55,7 @@ import { GhpageCountPipe } from './pipes/ghpage-count.pipe';
     ProfessorSearchComponent,
     NoticeEditComponent,
     FormFieldsComponent,
+    HttpClientModule
     
     GhpageCountPipe
   ],
