@@ -57,7 +57,7 @@ import { FormFieldsComponent } from './form-fields/form-fields.component';
     FormFieldsComponent,
     HttpClientModule
     
-    GhpageCountPipe
+  
   ],
   imports: [
     BrowserModule,
