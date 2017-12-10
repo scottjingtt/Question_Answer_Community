@@ -15,7 +15,7 @@ import { FormFieldsComponent} from './form-fields/form-fields.component';
 // import {QuestionComponent} from '/question/question.component';
 
 const appRoutes: Routes = [
-    { path: 'login', component: LoginComponent},
+    // { path: 'login', component: LoginComponent},
     { path: 'register', component: RegisterComponent },
     { path: 'home', component:HomeComponent,canActivate:[AuthGuard]},
     { path: 'admin', component:AdminComponent,canActivate:[AuthGuard]},

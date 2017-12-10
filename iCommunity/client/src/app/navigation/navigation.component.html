@@ -14,7 +14,7 @@
                 <a href="#" [routerLink]="['/questions']">Questions</a>
             </li>
             <li>
-                <a href="#" [routerLink]="['/home']">Profile</a>
+                <a href="#" *ngIf="currentUser" [routerLink]="['/home']">Profile</a>
             </li>
             <li>
                 <a href="#" [routerLink]="['/search']">Search</a>
