@@ -4,10 +4,9 @@
 
     <div class="container-fluid">
         <div class="col-sm-3">
-            <notice></notice>
             <local-search></local-search>
+            <notice *ngIf="currentUser"></notice>
             <login></login>
-            
         </div>
         <div class="col-sm-9">
             <div class="jumbotron">

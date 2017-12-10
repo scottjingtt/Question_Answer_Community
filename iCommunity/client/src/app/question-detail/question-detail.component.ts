@@ -40,7 +40,7 @@ export class QuestionDetailComponent implements OnInit {
     this.selectedQuestion["answers"] = this.answers;
     this.questionsService.updateQuestion(this.selectedQuestion, this.selectedQuestion["_id"]);
     this.sortOnTime();
-    // window.location.reload();
+
   }
   sortOnTime(){
     this.answers.sort(function(a, b){
