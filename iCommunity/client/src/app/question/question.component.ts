@@ -54,4 +54,22 @@ export class QuestionComponent implements OnInit {
     JSON.parse(this.questions)
   }
 
+  getQuestionByCategory(category){
+    console.log(category);
+    if(category != "All"){
+      this.questionsService.getQuestionByCategory(category).subscribe(questions=>
+      {
+        console.log(questions);
+        this.questions = questions; 
+        this.sortOnTime();
+      });
+    }else{
+      this.questionsService.getAllQuestions().subscribe(questions =>
+        {
+          this.questions = questions; 
+          this.sortOnTime();
+      });
+    }
+  }
+
 }

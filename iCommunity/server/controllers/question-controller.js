@@ -75,3 +75,10 @@ exports.delete = function (request, response) {
         });
     });
 };
+
+exports.find = function(request, response){
+    questionService.search({category: request.params.questionCategory}, function (questions) {
+        response.status(200);
+        response.json(questions);
+    });
+}

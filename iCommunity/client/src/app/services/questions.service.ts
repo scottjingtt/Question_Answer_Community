@@ -34,4 +34,7 @@ export class QuestionsService {
       console.log(data);
   });
   }
+  getQuestionByCategory(category){
+    return this.http.get('/api/questions/category/' + category).map(res => res.json());
+  }
 }

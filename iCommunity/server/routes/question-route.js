@@ -16,4 +16,7 @@ module.exports = function (app) {
         .get(questionController.get)
         .put(questionController.put)
         .delete(questionController.delete);
+
+    app.route('/api/questions/category/:questionCategory')
+        .get(questionController.find)
 };
