@@ -5,6 +5,7 @@ import { AlertService, UserService,AuthenticationService } from '../services/ind
 import { window } from 'rxjs/operators/window';
 
 @Component({
+    selector: "login",
     moduleId: module.id,
     templateUrl: 'login.component.html'
 })
