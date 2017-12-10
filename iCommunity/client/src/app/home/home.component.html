@@ -1,34 +1,23 @@
-
-      <div class="container" style="border:solid; width:100%; margin:0;">
-            <h1>Hi {{currentUser.firstName}}!</h1>
-            <p>You're logged in!!</p>
-            <h3>User Information:</h3>
-                <ul class="card card-block">
-                    <li *ngIf="currentUser.image">
-                        <img src={{currentUser.image}}>
-                    </li>
-                    <li>
-                        <p>Username: <b>{{currentUser.username}}</b></p></li>
-                    <li>
-                        <p>FirstName: <b>{{currentUser.firstName}}</b></p></li>
-                    <li>
-                        <p>LastName: <b>{{currentUser.lastName}}</b></p></li>
-                    <li>
-                        <p>Identity: <b>{{currentUser.identity}}</b></p></li>
-                    <li>
-                        <p>Major: <b>{{currentUser.major}}</b></p></li>
-                    <!-- <li><p>user._id:</p>{{currentUser._id}}</li> -->
-                    <!-- <li><p>token:</p>{{currentUser.token}}</li> -->
-                    <li>
-                        <p>Email: <a href="mailto:currentUser.email"><b>{{currentUser.email}}</b></a></p>
-                    </li>
-                    <li>
-                        <p>Created Date: <b>{{currentUser.created_date | date:'shortTime'}}</b></p></li>
-                </ul>
-                <!-- </div> -->
-            <button [routerLink]="['/profile']" class="btn btn-primary" ng-click="test()">Edit Profile</button>
-            <button [routerLink]="['/login']" class="btn btn-primary" ng-click="test()">Log out</button>
-            <button [routerLink]="['/questions']" class="btn btn-primary" ng-click="test()">Questions</button>
-            <button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/admin']" class="btn btn-primary" ng-click="test()">Admin Page</button>
-			<button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/noticeEdit']" class="btn btn-primary" ng-click="test()">Edit Notice</button>
-        </div>
+<div class="container-fluid">
+  <h3>{{currentUser.firstName}}'s Information:</h3>
+  <hr>  
+  <div class="media">
+    <div class="col-sm-2" *ngIf="currentUser.image">
+      <img src={{currentUser.image}} class="img-thumbnail" alt="Cinque Terre">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Username: {{currentUser.username}}</h4>
+      <h4>FirstName: {{currentUser.firstName}}</h4>
+      <h4>LastName: {{currentUser.lastName}}</h4>
+      <h4>Identity: {{currentUser.identity}}</h4>
+      <h4>Major: {{currentUser.major}} </h4>
+      <h4>Email: <a href="mailto:currentUser.email"> {{currentUser.email}} </a></h4>
+      <h4>Created Date: {{currentUser.created_date | date:'shortTime'}} </h4>
+    </div>
+  </div>
+  <button [routerLink]="['/profile']" class="btn btn-primary" ng-click="test()">Edit profile</button>
+  <button [routerLink]="['/login']" class="btn btn-primary" ng-click="test()">Log out</button>
+  <!-- <button [routerLink]="['/questions']" class="btn btn-primary" ng-click="test()">Questions</button> -->
+  <button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/admin']" class="btn btn-primary" ng-click="test()">Admin page</button>
+  <button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/noticeEdit']" class="btn btn-primary" ng-click="test()">Edit Notice</button>
+</div>
