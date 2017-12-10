@@ -48,8 +48,9 @@ finalUsers:any = [];
                         console.log(match === s);
                         if (match === s)
                         {
-                        
-                         finalArray.push(entry);
+                          if(entry.identity == 'Professor'){
+                            finalArray.push(entry);
+                        }
                          }
                       }
           
