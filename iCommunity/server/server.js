@@ -7,23 +7,23 @@ bodyParser = require('body-parser'),
 expressJwt = require('express-jwt');
 
 // mongoose instance connection url connection
-mongoose.connect('mongodb://localhost/questionDB', { useMongoClient: true });
+mongoose.connect('mongodb://localhost/userDB', { useMongoClient: true });
 //'mongodb://localhost/stickyDB'
 mongoose.Promise = global.Promise;
 
 
 // use JWT auth to secure the api, the token can be passed in the authorization header or querystring
-// app.use(expressJwt({
-//     secret: "iCommunity",
-//     getToken: function (req) {
-//         if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
-//             return req.headers.authorization.split(' ')[1];
-//         } else if (req.query && req.query.token) {
-//             return req.query.token;
-//         }
-//         return null;
-//     }
-// }).unless({ path: ['/users/authenticate', '/users/register','/api/questions']}));
+app.use(expressJwt({
+    secret: "iCommunity",
+    getToken: function (req) {
+        if (req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearer') {
+            return req.headers.authorization.split(' ')[1];
+        } else if (req.query && req.query.token) {
+            return req.query.token;
+        }
+        return null;
+    }
+}).unless({ path: ['/users/authenticate', '/users/register','/api/questions']}));
 
 
 //Adding body parser for handling request and response objects.
