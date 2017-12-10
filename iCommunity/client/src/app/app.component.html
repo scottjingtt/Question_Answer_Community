@@ -4,15 +4,9 @@
 
     <div class="container-fluid">
         <div class="col-sm-3">
-<<<<<<< HEAD
             <local-search></local-search>
             <notice *ngIf="currentUser"></notice>
-=======
-            <notice></notice>
-            <local-search></local-search>
-            <login></login>
-            
->>>>>>> origin/master
+            <login *ngIf="!currentUser"></login>
         </div>
         <div class="col-sm-9">
             <div class="jumbotron">
@@ -21,10 +15,6 @@
                     <router-outlet></router-outlet>
                 </div>
             </div>
-<<<<<<< HEAD
-            <hr>
-=======
->>>>>>> origin/master
         </div>
     </div>
 </div>

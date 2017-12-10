@@ -1,5 +1,9 @@
-<div *ngIf="currentUser" class="container">
-    <h2>Post</h2>
+<div *ngIf="currentUser" class="panel panel-default">
+        <div class="panel-heading">
+            <h2 class="panel-title">Post</h2>
+        </div>
+    
+     <div class="panel-body">
       <form (ngSubmit)="postQuestion()">
         <div class="form-group">
           <label class="col-form-label">Question</label>
@@ -14,6 +18,7 @@
         <button class="btn btn-primary">Post</button>
         <button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Cancel to home</button>
       </form>
+  </div>
   </div>
   <hr *ngIf="currentUser">
   

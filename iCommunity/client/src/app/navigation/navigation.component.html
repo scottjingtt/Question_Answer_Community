@@ -14,7 +14,7 @@
                 <a href="#" [routerLink]="['/questions']">Questions</a>
             </li>
             <li>
-                <a href="#" [routerLink]="['/home']">Profile</a>
+                <a href="#" *ngIf="currentUser" [routerLink]="['/home']">Profile</a>
             </li>
             <li>
                 <a href="#" [routerLink]="['/search']">Search</a>
@@ -25,18 +25,10 @@
         </ul>
 
         <!-- Search -->
-<<<<<<< HEAD
         <div *ngIf="currentUser" class="navbar-form navbar-right" role="search">
-            <a [routerLink]="['/login']" class="btn btn-primary" (click)="logout()">Log out</a>
+            <a [routerLink]="['/questions']" class="btn btn-primary" (click)="logout()">Log out</a>
         </div>
-=======
-        <!-- <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-default"> Search</button>
-        </form> -->
->>>>>>> origin/master
+
 
     </div>
 </div>
