@@ -14,14 +14,19 @@ export class QuestionComponent implements OnInit {
   newQuestion: any;
   questionCategory: any;
   categories: any = ["Science", "Engineering", "History", "Culture"];
+  currentUser: any = null;
 
   constructor(private questionsService: QuestionsService) { }
 
   ngOnInit() {
     this.questionsService.getAllQuestions().subscribe(questions =>
       {
-        console.log("user is " + JSON.parse(localStorage.getItem("currentUser"))._id);
-        console.log(questions);
+        if(localStorage.hasOwnProperty('currentUser')){
+          this.currentUser = localStorage.getItem('currentUser');
+        }else{
+          this.currentUser = null;
+        }
+        console.log("questions are " + questions);
         this.questions = questions; 
         this.sortOnTime();
     });

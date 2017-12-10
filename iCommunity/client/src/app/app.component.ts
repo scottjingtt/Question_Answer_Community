@@ -12,7 +12,11 @@ export class AppComponent  implements OnInit{
   title = 'app';
   currentUser: User;
   constructor(private userService: UserService) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if(localStorage.getItem('currentUser') != null){
+      this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    }else{
+      this.currentUser = null;
+    }
 }
 
   ngOnInit() {

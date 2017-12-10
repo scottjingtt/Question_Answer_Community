@@ -1,4 +1,4 @@
-<div class="container">
+<div *ngIf="currentUser" class="container">
     <h2>Post</h2>
       <form (ngSubmit)="postQuestion()">
         <div class="form-group">
@@ -7,14 +7,7 @@
         </div>
         <div class="form-group">
           <label class="col-form-label">Category</label>
-          <!-- <select ng-model="questionCategory" class="form-control form-control-lg selectpicker">
-            <option style="display:none"></option>
-            <option>Engineering</option>
-            <option>Science</option>
-            <option>Culture</option>
-            <option>History</option>
-          </select> -->
-          <select [(ngModel)]="questionCategory" name="category" class="form-control form-control-lg selectpicker">
+          <select [(ngModel)]="questionCategory" name="category" class="form-control form-control-lg selectpicker" placeholder="Please select a category">
               <option *ngFor="let category of categories">{{ category }}</option>
           </select>
         </div>
@@ -22,11 +15,11 @@
         <button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Cancel to home</button>
       </form>
   </div>
-  <hr>
+  <hr *ngIf="currentUser">
   
   <div class="container" id="questions">
     <h2>Questions</h2>
-    <form>
+    <form *ngIf="currentUser">
       Pick a topic:
       <div>
       <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)='getQuestionByCategory("All")' [value]=null>All
