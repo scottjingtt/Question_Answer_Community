@@ -13,43 +13,53 @@ import { AlertService, UserService,AuthenticationService } from '../services/ind
 export class ProfessorSearchComponent implements OnInit {
     users:any = [];
     currentUser: User;
-
+finalUsers:any = [];
     constructor(
         private router:Router,
         private userService: UserService,
         private alertService: AlertService,
     ) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        //this.userService.getAll().subscribe(users => { this.users = users; });
      }
     ngOnInit() {
         
             this.loadAll();
-
+           
 
            // console.log(questions);
             
-            var s= (<HTMLInputElement>document.getElementById('keywordID')).value;
-            console.log("Professor Name "+s);
-            let someArray = this.users;    
-            var finalArray =[];          
-             
-                        for (let entry of someArray) {  
-                          var match =(entry.firstName+" "+entry.lastName);
-                          console.log(match === s);
-                          if (match === s)
-                          {
-                          
-                           finalArray.push(entry);
-                           }
-                        }
-            
-                    this.users= finalArray; 
+           
                    // this.sortOnTime();
              
                 
     }
     loadAll(){
-      this.userService.getAll().subscribe(users => { this.users = users; });
+      this.userService.getAll().subscribe(users =>
+        {
+
+          var s= (<HTMLInputElement>document.getElementById('keywordID')).value;
+          console.log("Professor Name "+s);
+          let someArray = users;    
+          var finalArray =[];          
+           
+                      for (let entry of someArray) {  
+                        var match =(entry.firstName+" "+entry.lastName);
+                        console.log(match === s);
+                        if (match === s)
+                        {
+                        
+                         finalArray.push(entry);
+                         }
+                      }
+          
+                  this.users= finalArray; 
+
+         // this.users = users; 
+      });
+
+     
+
     }
    
 

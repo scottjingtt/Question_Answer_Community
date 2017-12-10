@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Http, Response } from '@angular/http';
+import { Http,Headers, Response } from '@angular/http';
 
 interface GitHubReq {
   searchType: 'users',
@@ -15,10 +15,10 @@ export class GithubSearchService {
 
   constructor(public http:Http) { }
 
-  search(req: GitHubReq) {
+ public search(req: GitHubReq) {
     
             var
-                link = "https://api.github.com/search/"+req.searchType,
+                link = "http://api.github.com/search/"+req.searchType,
                 params: any = {};
             // defaults
             if (!req.page) req.page=1;
@@ -38,11 +38,11 @@ export class GithubSearchService {
     
             return this.http
             .get(link, {params:params})
-            .map((resp:Response)=>{
+            .map((response:Response)=>{
                 switch (req.searchType) {
                    
                     case 'users':
-                        var jSON = resp.json();
+                        var jSON = response.json();
                         return {
                             items: jSON,
                             total_count: jSON.length
@@ -51,7 +51,7 @@ export class GithubSearchService {
             })
             .catch(err=>{
                 //   check if err message arrived
-                if (err.json && err.json().message) {
+                if (err.json() && err.json().message) {
                     //   check if err message is not in list
                     if (
                         ["Validation Failed", "Not Found"]
