@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { AlertService, UserService,AuthenticationService } from '../services/index';
+import { window } from 'rxjs/operators/window';
 
 @Component({
     selector: "login",
@@ -24,8 +25,6 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         // reset login status
-        this.authenticationService.logout();
-
         // get return url from route parameters or default to '/'
         // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/questions';
         // this.returnUrl = '/home';
@@ -40,11 +39,13 @@ export class LoginComponent implements OnInit {
                     this.alertService.error("returnURL: " + this.returnUrl);
                     // this.router.navigate([this.returnUrl]);
                     this.router.navigateByUrl(this.returnUrl);
+                    location.reload();
                 },
                 error => {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+        
     }
 
 }

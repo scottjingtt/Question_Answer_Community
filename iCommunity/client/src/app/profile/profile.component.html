@@ -1,7 +1,6 @@
 <div class="container">
-    <h1>Hi {{currentUser.firstName}}!</h1>
+    <h3>Hi {{currentUser.firstName}}! Welcome to update</h3>
     <!-- <div class="col-md-6 col-md-offset-3"> -->
-        <h2>Update</h2>
         <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
                 <label for="email">Email</label>

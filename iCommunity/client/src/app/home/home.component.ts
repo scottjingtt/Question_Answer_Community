@@ -6,6 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     moduleId: module.id,
+    styleUrls: ['./home.component.scss'],    
     templateUrl: 'home.component.html'
 })
 
