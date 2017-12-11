@@ -1,5 +1,9 @@
-<div class="container">
-    <h3>Hi {{currentUser.firstName}}! Welcome to update</h3>
+<div class="panel panel-default">
+        <div class="panel-heading">
+            <h1 class="panel-title">Hi {{currentUser.firstName}}! Welcome to update</h1>
+        </div>
+    
+        <div class="panel-body">
     <!-- <div class="col-md-6 col-md-offset-3"> -->
         <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
@@ -50,3 +54,4 @@
             </div>
         </form>
     </div>
+</div>
