@@ -1,5 +1,6 @@
 <div *ngIf="selectedQuestion" class="container">
     <h2>{{ selectedQuestion.title }} </h2>
+    <p>{{selectedQuestion.content}}</p>
     <small>Question posted date : {{selectedQuestion.created_date | date:'short'}}</small>
     <hr>
   
