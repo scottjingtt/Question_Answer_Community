@@ -3,10 +3,10 @@
     <h1 class="panel-title">Questions Search Result</h1>
   </div>
 
-  <div class="panel-body" id="questions">
+  <div class="panel-body " id="questions">
     <p>{{currentUser.notice}}</p>
     <div class="row" *ngFor="let question of questions">
-      <div class="card card-block">
+      <div class="card card-block block">
         <h4 class="card-title">{{ question.title }}</h4>
         <p>
           <small>created on {{ question.created_date | date:'short'}}</small>

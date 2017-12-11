@@ -30,6 +30,7 @@ import { QuestionSearchComponent } from './question-search/question-search.compo
 import { ProfessorSearchComponent } from './professor-search/professor-search.component';
 import { NoticeEditComponent } from './notice-edit/notice-edit.component';
 import { FormFieldsComponent } from './form-fields/form-fields.component';
+import { PictureWallComponent } from './picture-wall/picture-wall.component';
 
 
 // import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -54,9 +55,8 @@ import { FormFieldsComponent } from './form-fields/form-fields.component';
     QuestionSearchComponent,
     ProfessorSearchComponent,
     NoticeEditComponent,
-    FormFieldsComponent
-
-  
+    FormFieldsComponent,
+    PictureWallComponent
   ],
   imports: [
     BrowserModule,
