@@ -22,31 +22,23 @@
   </div>
   <!-- <hr *ngIf="currentUser"> -->
   
-  <div class="panel panel-default">
-      <div class="panel-heading">
-          <h1 class="panel-title">Questions</h1>
+  <div class="container" id="questions">
+    <h2>Questions</h2>
+    <div *ngIf="currentUser">
+      <div class="radio">
+      <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)='getQuestionByCategory("All")' [value]=null/>
+      <label class="radioLabel">All</label>
       </div>
-  
-      <div class="panel-body" id="questions">
-         
-    <form *ngIf="currentUser">
-      Pick a topic:
-      <div>
-      <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)='getQuestionByCategory("All")' [value]=null>All
+      <div class="radio" *ngFor="let category of categories">
+      <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)="getQuestionByCategory(category)" value={{category}}/>
+      <label class="radioLabel">{{category}}</label>
       </div>
-      <div *ngFor="let category of categories">
-        <div class="categary">
-      <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)="getQuestionByCategory(category)" value={{category}}>{{category}}
-    </div>  
     </div>
-   <div class="clear"></div>
-    </form>
       <div class="row" *ngFor="let question of questions">
         <div class="card card-block">
           <h4 class="card-title">{{ question.title }}</h4>
-          <p><small>created on {{ question.created_date | date:'short'}}</small></p>
+          <p><small>created by <a>{{question.creator.user}}</a> on {{ question.created_date | date:'short'}}</small></p>
           <a [routerLink]="['/questions', question._id]" class="card-link">View Answers</a>
         </div>
       </div>
-  </div>
   </div>
