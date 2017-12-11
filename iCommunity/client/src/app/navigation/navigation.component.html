@@ -10,7 +10,7 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar">
         <ul class="nav navbar-nav">
-            <li class="active">
+            <li>
                 <a href="#" [routerLink]="['/questions']">Questions</a>
             </li>
             <li>
@@ -28,7 +28,6 @@
         <div *ngIf="currentUser" class="navbar-form navbar-right" role="search">
             <a [routerLink]="['/questions']" class="btn btn-primary" (click)="logout()">Log out</a>
         </div>
-
 
     </div>
 </div>

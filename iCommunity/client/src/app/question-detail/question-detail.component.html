@@ -1,10 +1,10 @@
 <div *ngIf="selectedQuestion" class="container">
-    <h1>{{ selectedQuestion.title }} </h1>
+    <h2>{{ selectedQuestion.title }} </h2>
     <small>Question posted date : {{selectedQuestion.created_date | date:'short'}}</small>
     <hr>
   
-    <div class="container">
-      <form (ngSubmit)="postAnswer()" *ngIf="currentUser.identity == 'Professor'">
+    <div class="container" *ngIf="currentUser.identity == 'Professor'">
+      <form (ngSubmit)="postAnswer()">
       <div class="form-group">
         <label class="col-form-label">Post Answer</label>
         <input class="form-control form-control-lg" type="textarea" [(ngModel)]="newAnswer" name="answer" ng-model="newAnswer" placeholder="Please enter a answer">
@@ -13,16 +13,18 @@
     </form>
     </div>
     <div *ngIf="selectedQuestion.answers.length == 0"class="container">
-        <h2>There is no anwsers available for this question by this point.</h2>
+        <h3>There is no anwsers available for this question by this point.</h3>
     </div>
     <div *ngIf="selectedQuestion.answers.length != 0"class="container">
       <h2>Answers:</h2>
       <div class="row" *ngFor="let answer of selectedQuestion.answers">
           <div class="card card-block">
             <h4 class="card-title">{{ answer.body }}</h4>
-            <small>{{ answer.date | date:'short' }}</small>
+            <small>{{ answer.date | date:'short' }}  by <a>{{answer.creator}}</a></small>
           </div>
       </div>
     </div>
-    <button class="btn btn-primary" (click)="gotolist()">Back</button>
+    <div class="container">
+      <button class="btn btn-primary" (click)="gotolist()">Back</button>
+    </div>
   </div>

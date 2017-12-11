@@ -24,19 +24,20 @@
   
   <div class="container" id="questions">
     <h2>Questions</h2>
-    <form *ngIf="currentUser">
-      Pick a topic:
-      <div>
-      <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)='getQuestionByCategory("All")' [value]=null>All
+    <div *ngIf="currentUser">
+      <div class="radio">
+      <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)='getQuestionByCategory("All")' [value]=null/>
+      <label class="radioLabel">All</label>
       </div>
-      <div *ngFor="let category of categories">
-      <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)="getQuestionByCategory(category)" value={{category}}>{{category}}
+      <div class="radio" *ngFor="let category of categories">
+      <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)="getQuestionByCategory(category)" value={{category}}/>
+      <label class="radioLabel">{{category}}</label>
       </div>
-    </form>
+    </div>
       <div class="row" *ngFor="let question of questions">
         <div class="card card-block">
           <h4 class="card-title">{{ question.title }}</h4>
-          <p><small>created on {{ question.created_date | date:'short'}}</small></p>
+          <p><small>created by <a>{{question.creator.user}}</a> on {{ question.created_date | date:'short'}}</small></p>
           <a [routerLink]="['/questions', question._id]" class="card-link">View Answers</a>
         </div>
       </div>
