@@ -1,15 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../services/questions.service';
 import { Query } from '@angular/core/src/metadata/di';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from '@angular/animations';
-
-
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
@@ -50,18 +41,17 @@ export class QuestionComponent implements OnInit {
   }
 
   postQuestion(){
-
     var response = '{"title" : "' + this.newQuestion + '", "content" : "' + this.questionContent+ '", "creator" : {"id": "' + JSON.parse(localStorage.getItem("currentUser"))._id+ '", "user" : "' + JSON.parse(localStorage.getItem("currentUser")).username +'"}, "category": "' + this.questionCategory  + '"}';
     console.log("category is " + this.questionCategory);
     this.questionsService.postQuestion(JSON.parse(response));
     console.log(this.questions);
-    this.newQuestion = null;
-    this.questionsService.getAllQuestions().subscribe(questions =>
-      { this.questions = questions; 
-    });
-    this.sortOnTime();
+    // this.newQuestion = null;
+    // this.questionsService.getAllQuestions().subscribe(questions =>
+    //   { this.questions = questions; 
+    // });
+    // this.sortOnTime();
     // console.log(this.questions);
-    // window.location.reload();
+    window.location.reload();
   }
   getQuestionByCategory(category){
     console.log(category);

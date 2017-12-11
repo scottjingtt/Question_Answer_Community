@@ -1,10 +1,65 @@
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif;
-    text-align: center;
-
-}
+    text-align: center;}
 .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
 .w3-third img:hover{opacity: 1}
+.w3-main{
+    width: 100%;
+}
+.w3-row{
+    margin:0;
+    padding:0;
+    border:solid;
+    height:800px;
+}
+.w3-third{
+    float: left;
+    width:33%;
+    height: 100%;
+    margin: 0 !important;
+    padding:0 !important;
+}
+
 .thumbnail{
-    width: 18%;
-    height: 200px;
+    width: 100%;
+    margin: 0 !important;
+    /* height: 200px; */
+    padding: 0 !important;
+    /* border: solid green; */
+}
+
+.w3-modal .w3-black{
+    padding-top:0;
+}
+
+.w3-light-grey .w3-content{
+    max-width:1600px;
+}
+
+
+.t1{
+    height: 50%;
+}
+.t2{
+    height: 50%;
+}
+.t3{
+    height: 25%;
+}
+.t4{
+    height: 15%;
+}
+.t5{
+    height: 40%;
+}
+.t6{
+    height: 20%;
+}
+.t7{
+    height: 15%;
+}
+.t8{
+    height: 30%;
+}
+.t9{
+    height: 55%;
 }

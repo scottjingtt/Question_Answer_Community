@@ -4,9 +4,13 @@
   </div>
 
   <div class="panel-body">
-    <h2 class="panel-title">{{ selectedQuestion.title }}</h2>
+    <div class="form-group">
+    <h2 class="col-form-label">{{ selectedQuestion.title }}</h2>
+  </div>
+    <div class="card card-block">
     <p>{{selectedQuestion.content}}</p>
-    <small>Question posted date : {{selectedQuestion.created_date | date:'short'}}</small>
+  </div>
+    <small>Question posted date : {{selectedQuestion.created_date | date:'short'}} by <a>{{selectedQuestion.creator.user}}</a></small>
     <div *ngIf="currentUser.identity == 'Professor'">
       <form (ngSubmit)="postAnswer()">
         <div class="form-group">

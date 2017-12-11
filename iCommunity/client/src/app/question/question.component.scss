@@ -4,7 +4,8 @@ hr{
 }
 .radio{
     display: inline-block;
-    width: 100px;
+    // width: 120px;
+    margin-left: 50px;
 }
 .radioLabel{
     padding: 0;
@@ -24,4 +25,7 @@ hr{
 .ques:hover{
     background-color: hsla(0, 0, 0, 0.1);
     transform: scale(1.03, 1.1);
+}
+a{
+    color: rgb(12, 106, 143);
 }

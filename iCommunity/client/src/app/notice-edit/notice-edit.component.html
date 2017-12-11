@@ -1,11 +1,25 @@
-<div class="container">
-  <h1>Hi {{currentUser.firstName}}!</h1>
+
+              <!-- <script type="text/javascript">
+                function check(){
+                
+                    var str=document.getElementById("txt").value;
+                
+                    document.write(str.split(/\s+/g).join("<br />"));
+                }
+                </script> -->
+
+<div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Hi {{currentUser.username}}! Edit Notice</h1>
+        </div>
+      
+        <div class="panel-body">
   <!-- <div class="col-md-6 col-md-offset-3"> -->
-      <h2>Update</h2>
       <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !notice.valid }">
-              <label for="notice">Notice:</label>
-              <input type="text" class="form-control" name="email" [(ngModel)]="model.notice" #notice="ngModel" required />
+              <label for="notice">Edit Notice:</label>
+          
+              <textarea rows="8" type="text" class="form-control" name="email" [(ngModel)]="model.notice" #notice="ngModel" required ></textarea>
               <div *ngIf="f.submitted && !notice.valid" class="help-block">Notice is required</div>
           </div>          
           <div class="form-group">
@@ -14,4 +28,5 @@
               <button [disabled]="loading" [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Cancel to home</button>
           </div>
       </form>
+  </div>
   </div>

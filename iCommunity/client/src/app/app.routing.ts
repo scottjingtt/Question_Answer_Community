@@ -12,10 +12,11 @@ import { QuestionSearchComponent } from './question-search/question-search.compo
 import { ProfessorSearchComponent } from './professor-search/professor-search.component';
 import { NoticeEditComponent } from './notice-edit/notice-edit.component';
 import { FormFieldsComponent} from './form-fields/form-fields.component';
-// import {QuestionComponent} from '/question/question.component';
+import { PictureWallComponent } from './picture-wall/picture-wall.component';
 
 const appRoutes: Routes = [
-    // { path: 'login', component: LoginComponent},
+    { path: '', component:PictureWallComponent},
+    { path: 'login', component:PictureWallComponent},
     { path: 'register', component: RegisterComponent },
     { path: 'home', component:HomeComponent,canActivate:[AuthGuard]},
     { path: 'admin', component:AdminComponent,canActivate:[AuthGuard]},
