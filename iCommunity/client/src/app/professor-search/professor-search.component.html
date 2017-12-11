@@ -1,4 +1,9 @@
-<div class="container" id="users">
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h1 class="panel-title">Search Result</h1>
+    </div>
+  
+    <div class="panel-body" id="users">
   <h2>All Users</h2>
     <div class="row" *ngFor="let user of users">
       <div class="card card-block">
@@ -9,7 +14,8 @@
         </ul>
       </div>
     </div>
-    
+    <button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Goto home</button>
+<p></p>    
 </div>
-<div><button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Goto home</button></div>
+</div>
 <!-- <a (click)="deleteUser(user._id)">Delete</a> -->

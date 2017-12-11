@@ -1,48 +1,49 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">GitHub User Search</h1>
+  </div>
 
-    <div class="panel panel-default">
-            <div class="panel-heading">
-                <h1 class="panel-title">GitHub Professor Search</h1>
-            </div>
-        
-            <div class="panel-body">
+  <div class="panel-body">
     <div class="row text-center">
-        <div class="search-box col-md-12">
+      <div class="search-box col-md-12">
 
-            <input form autocomplete="off" class="form-control" type="search" name="q" id="query" required="true" value="" placeholder="Search Github Users" [(ngModel)]="username" name="username">
-            <input type="hidden" name="limit" value="all">
-             <input class="btn btn-primary" type="submit" value="User Search" (click)="searchUser()">
-             <p></p>
-        </div>
+        <input form autocomplete="off" class="form-control" type="search" name="q" id="query" required="true" value="" placeholder="Search Github Users"
+          [(ngModel)]="username" name="username">
+        <input type="hidden" name="limit" value="all">
+        <input class="btn btn-primary" type="submit" value="User Search" (click)="searchUser()">
+        <p></p>
+      </div>
     </div>
     <div *ngIf="userData">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <h3>{{ userData.name }}</h3>
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="img-thumbnail" src="{{ userData.avatar_url }}" alt="">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <h3>{{ userData.name }}</h3>
+          <div class="row">
+            <div class="col-md-4">
+              <img class="img-thumbnail" src="{{ userData.avatar_url }}" alt="">
 
-                    </div>
-                    <div class="col-md-8">
-
-                        <br>
-                        <ul class="list-group">
-                            <li class="list-group-item"><strong>Username: </strong>{{ userData.login }}</li>
-                        </ul>
-                    </div>
-                </div>
-                    <div class="panel-body">
-                        <h3>Public Repositories</h3>
-                        <div *ngFor="let repo of repoData">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <p><strong><a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a></strong></p>
-                                </div>
-                        </div>
-                    </div>
-                </div>
             </div>
+            <div class="col-md-8">
+              <br>
+              <ul class="list-group">
+                <li>
+                  <h3>Username: {{ userData.login }} </h3>
+                </li>
+                <li>
+                  <h3>Public Repositories</h3>
+                </li>
+                <div *ngFor="let repo of repoData">
+                  <p>
+                    <strong>
+                      <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+                    </strong>
+                  </p>
+                </div>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 </div>
