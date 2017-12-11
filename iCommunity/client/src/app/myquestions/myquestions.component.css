@@ -1,0 +1,7 @@
+.ques:hover{
+    background-color: hsla(0, 0, 0, 0.1);
+    transform: scale(1.03, 1.1);
+}
+a{
+    margin: 10px;
+}

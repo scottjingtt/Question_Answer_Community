@@ -29,7 +29,7 @@
       <h3>There is no anwsers available for this question by this point.</h3>
     </div>
     <div *ngIf="answers.length != 0" class="panel-body">
-      <div class="block" *ngFor="let answer of answers">
+      <div class="ques block" *ngFor="let answer of answers">
         <!-- <div class="card card-block"> -->
           <h4 class="ansTitle">{{ answer.body }}</h4>
           <small>{{ answer.date | date:'short' }} by

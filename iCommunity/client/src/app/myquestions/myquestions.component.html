@@ -4,9 +4,9 @@
     </div>
 
     <div class="panel-body">
-      <div class="block" *ngFor="let question of myquestions">
+      <div class="ques block" *ngFor="let question of myquestions">
           <p>{{question.title}}</p>
-          <a (click)="deleteQuestion(question)">Delete Questions</a>
+          <a (click)="deleteQuestion(question)">Delete</a>
           <a [routerLink]="['/questions', question._id]" class="card-link">View Answers</a>
       </div>  
     </div>

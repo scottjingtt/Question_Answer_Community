@@ -4,3 +4,7 @@
 .container{
     width: 100%;
 }
+.ques:hover{
+    background-color: hsla(0, 0, 0, 0.1);
+    transform: scale(1.03, 1.1);
+}
