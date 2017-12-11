@@ -29,4 +29,8 @@ h1, h2, h3, h4, h5, h6 {
 .small-print {
 	text-align: center;
 	}
+
+	body {
+		background-image:url("assets/images/wallpaper.jpg") ;
+	}
 	

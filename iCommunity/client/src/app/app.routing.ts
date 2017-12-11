@@ -15,8 +15,8 @@ import { FormFieldsComponent} from './form-fields/form-fields.component';
 import { PictureWallComponent } from './picture-wall/picture-wall.component';
 
 const appRoutes: Routes = [
-    { path: '', component:PictureWallComponent},
-    { path: 'login', component:PictureWallComponent},
+    // { path: '', component:PictureWallComponent},
+    // { path: 'login', component:PictureWallComponent},
     { path: 'register', component: RegisterComponent },
     { path: 'home', component:HomeComponent,canActivate:[AuthGuard]},
     { path: 'admin', component:AdminComponent,canActivate:[AuthGuard]},

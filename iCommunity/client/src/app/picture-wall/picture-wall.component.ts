@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
     // moduleId: module.id,
@@ -8,4 +8,10 @@ import { Component} from '@angular/core';
 })
 
 export class PictureWallComponent{
+    @Output()
+    notify: EventEmitter<string> = new EventEmitter<string>();
+
+    showLogin():void{
+        this.notify.emit("login");
+    }
 }
