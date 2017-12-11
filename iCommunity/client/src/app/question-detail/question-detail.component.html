@@ -1,39 +1,41 @@
 <div *ngIf="selectedQuestion" class="panel panel-default">
-    <div class="panel-heading">
-        <h2 class="panel-title">Question</h2>
-    </div>
-    <div class="panel-heading">
-        <h2 class="panel-title">{{ selectedQuestion.title }}</h2>
-    </div>
+  <div class="panel-heading">
+    <h2 class="panel-title">Question</h2>
+  </div>
 
-    <div class="panel-body">
+  <div class="panel-body">
+    <h2 class="panel-title">{{ selectedQuestion.title }}</h2>
     <p>{{selectedQuestion.content}}</p>
     <small>Question posted date : {{selectedQuestion.created_date | date:'short'}}</small>
-    <div class="container" *ngIf="currentUser.identity == 'Professor'">
-        <form (ngSubmit)="postAnswer()">
+    <div *ngIf="currentUser.identity == 'Professor'">
+      <form (ngSubmit)="postAnswer()">
         <div class="form-group">
           <label class="col-form-label">Post Answer</label>
-          <input class="txtarea form-control form-control-lg" type="textarea" [(ngModel)]="newAnswer" name="answer" ng-model="newAnswer" placeholder="Please enter a answer">
+          <input class="txtarea form-control form-control-lg" type="textarea" [(ngModel)]="newAnswer" name="answer" ng-model="newAnswer"
+            placeholder="Please enter a answer">
         </div>
         <div class="form-group">
-        <button class="btn btn-primary">Post</button>
-      </div>
+          <button class="btn btn-primary">Post</button>
+        </div>
       </form>
-      </div>
+    </div>
+  </div>
   </div>
   <div class="panel panel-default">
-      <div class="panel-heading">
-          <h2 class="panel-title">Answer</h2>
-      </div>
-    <div *ngIf="selectedQuestion.answers.length == 0"class="container">
-        <h3>There is no anwsers available for this question by this point.</h3>
+    <div class="panel-heading">
+      <h2 class="panel-title">Answer</h2>
     </div>
-    <div *ngIf="selectedQuestion.answers.length != 0"class="container">
-      <div class="panel panel-body" *ngFor="let answer of selectedQuestion.answers">
-          <div class="card card-block">
-            <h4 class="ansTitle">{{ answer.body }}</h4>
-            <small>{{ answer.date | date:'short' }}  by <a>{{answer.creator}}</a></small>
-          </div>
+    <div *ngIf="selectedQuestion.answers.length == 0" class="container">
+      <h3>There is no anwsers available for this question by this point.</h3>
+    </div>
+    <div *ngIf="selectedQuestion.answers.length != 0" class="panel-body">
+      <div class="block" *ngFor="let answer of selectedQuestion.answers">
+        <!-- <div class="card card-block"> -->
+          <h4 class="ansTitle">{{ answer.body }}</h4>
+          <small>{{ answer.date | date:'short' }} by
+            <a>{{answer.creator}}</a>
+          </small>
+        <!-- </div> -->
       </div>
     </div>
     <div class="container panel-default">
