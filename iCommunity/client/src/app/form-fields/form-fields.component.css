@@ -2,3 +2,7 @@
     width: 300px;
     display: inline;
 }
+
+.panel{
+    min-height: 400px;
+}
