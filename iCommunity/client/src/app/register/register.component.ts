@@ -5,6 +5,7 @@ import { AlertService, UserService } from '../services/index';
 
 @Component({
     moduleId: module.id,
+    styleUrls: ['./register.component.scss'],
     templateUrl: 'register.component.html'
 })
 
