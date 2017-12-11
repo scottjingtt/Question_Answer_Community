@@ -1,3 +1,13 @@
+
+              <!-- <script type="text/javascript">
+                function check(){
+                
+                    var str=document.getElementById("txt").value;
+                
+                    document.write(str.split(/\s+/g).join("<br />"));
+                }
+                </script> -->
+
 <div class="panel panel-default">
         <div class="panel-heading">
           <h1 class="panel-title">Hi {{currentUser.username}}! Edit Notice</h1>
@@ -8,7 +18,8 @@
       <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !notice.valid }">
               <label for="notice">Edit Notice:</label>
-              <textarea rows="3"  type="text" class="form-control" name="email" [(ngModel)]="model.notice" #notice="ngModel" required ></textarea>
+          
+              <textarea rows="8" type="text" class="form-control" name="email" [(ngModel)]="model.notice" #notice="ngModel" required ></textarea>
               <div *ngIf="f.submitted && !notice.valid" class="help-block">Notice is required</div>
           </div>          
           <div class="form-group">
