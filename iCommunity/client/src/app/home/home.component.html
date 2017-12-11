@@ -2,35 +2,37 @@
   <h3>{{currentUser.firstName}}'s Information:</h3>
   <hr>   -->
 
-  <div *ngIf="currentUser" class="panel panel-default">
-        <div class="panel-heading">
-            <h2 class="panel-title">{{currentUser.firstName}}'s Information:</h2>
-        </div>
-    
-        <div class="panel-body">
-                
-  <div class="media">
-    <div class="col-sm-2" *ngIf="currentUser.image">
-      <img src={{currentUser.image}} class="img-thumbnail" alt="Cinque Terre">
-    </div>
-    <div class="media-body">
-        <div class = "body-font">
-                <p>Username: {{currentUser.username}}</p>
-                <p>FirstName: {{currentUser.firstName}}</p>
-                <p>LastName: {{currentUser.lastName}}</p>
-                <p>Identity: {{currentUser.identity}}</p>
-                <p>Major: {{currentUser.major}} </p>
-                <p>Email: <a href="mailto:currentUser.email"> {{currentUser.email}} </a></p>
-                <p>Created Date: {{currentUser.created_date | date:'shortTime'}} </p>
-        </div>      
-
-    </div>
+<div *ngIf="currentUser" class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">{{currentUser.firstName}}'s Information:</h2>
   </div>
-  <button [routerLink]="['/profile']" class="btn btn-primary" ng-click="test()">Edit profile</button>
-  <!-- <button [routerLink]="['/login']" class="btn btn-primary" ng-click="test()">Log out</button> -->
-  <!-- <button [routerLink]="['/questions']" class="btn btn-primary" ng-click="test()">Questions</button> -->
-  <button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/admin']" class="btn btn-primary" ng-click="test()">Admin page</button>
-  <button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/noticeEdit']" class="btn btn-primary" ng-click="test()">Edit Notice</button>
-  <p></p>
+
+  <div class="panel-body">
+
+    <div class="media">
+      <div class="col-sm-2" *ngIf="currentUser.image">
+        <img src={{currentUser.image}} class="img-thumbnail" alt="Cinque Terre">
+      </div>
+      <div class="media-body">
+        <div class="body-font">
+          <p>Username: {{currentUser.username}}</p>
+          <p>FirstName: {{currentUser.firstName}}</p>
+          <p>LastName: {{currentUser.lastName}}</p>
+          <p>Identity: {{currentUser.identity}}</p>
+          <p>Major: {{currentUser.major}} </p>
+          <p>Email:
+            <a href="mailto:currentUser.email"> {{currentUser.email}} </a>
+          </p>
+          <p>Created Date: {{currentUser.created_date | date:'shortTime'}} </p>
+        </div>
+
+      </div>
+    </div>
+    <button [routerLink]="['/profile']" class="btn btn-primary" ng-click="test()">Edit profile</button>
+    <!-- <button [routerLink]="['/login']" class="btn btn-primary" ng-click="test()">Log out</button> -->
+    <!-- <button [routerLink]="['/questions']" class="btn btn-primary" ng-click="test()">Questions</button> -->
+    <button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/admin']" class="btn btn-primary" ng-click="test()">Admin page</button>
+    <button *ngIf="currentUser.identity == 'admin'" [routerLink]="['/noticeEdit']" class="btn btn-primary" ng-click="test()">Edit Notice</button>
+    <p></p>
   </div>
 </div>

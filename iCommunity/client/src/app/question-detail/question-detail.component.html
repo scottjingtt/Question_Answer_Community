@@ -1,5 +1,9 @@
-<div *ngIf="selectedQuestion" class="container">
-    <h2>{{ selectedQuestion.title }} </h2>
+<div *ngIf="selectedQuestion" class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">{{ selectedQuestion.title }}</h2>
+    </div>
+
+ <div class="panel-body">
     <small>Question posted date : {{selectedQuestion.created_date | date:'short'}}</small>
     <hr>
   
@@ -27,4 +31,5 @@
     <div class="container">
       <button class="btn btn-primary" (click)="gotolist()">Back</button>
     </div>
+  </div>
   </div>
