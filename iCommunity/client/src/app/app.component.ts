@@ -11,6 +11,7 @@ import { UserService} from './services/user.service';
 export class AppComponent  implements OnInit{
   title = 'app';
   currentUser: User;
+  showIndex = true;
   constructor(private userService: UserService) {
     if(localStorage.getItem('currentUser') != null){
       this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -22,9 +23,19 @@ export class AppComponent  implements OnInit{
   ngOnInit() {
     // this.loadAllUsers();
     this.loadUser();
+    if(this.currentUser){
+      this.showIndex = false;
+    }
     // this.alertService.error("return URL: " + this.route.snapshot.queryParams['returnUrl']);
 }
 loadUser(){
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+}
+
+onNotifyClicked(message:string):void{
+  this.showIndex = false;
+}
+showPictureWall(message:string):void{
+  this.showIndex = true;
 }
 }
