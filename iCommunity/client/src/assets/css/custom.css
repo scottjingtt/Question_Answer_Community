@@ -31,9 +31,14 @@ h1, h2, h3, h4, h5, h6 {
 	
 	.panel
 	{
-		background: #eee;
+		background: white;
 		-webkit-box-shadow:0 10px 10px rgba(0, 0, 0, 0.5) !important;
 		-moz-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5) !important;
 		box-shadow:  0 10px 10px rgba(0, 0, 0, 0.5) !important;
 		z-index:5;
+	}
+
+	.block{
+		border-radius: 10px;
+		border: 1px solid rgb(228, 224, 224);
 	}

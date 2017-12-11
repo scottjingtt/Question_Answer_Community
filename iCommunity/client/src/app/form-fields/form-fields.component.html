@@ -14,9 +14,7 @@
         <p></p>
       </div>
     </div>
-    <div *ngIf="userData">
-      <div class="panel panel-default">
-        <div class="panel-body">
+    <div *ngIf="userData" class="block">
           <h3>{{ userData.name }}</h3>
           <div class="row">
             <div class="col-md-4">
@@ -40,8 +38,6 @@
                   </p>
                 </div>
               </ul>
-            </div>
-          </div>
         </div>
       </div>
     </div>
