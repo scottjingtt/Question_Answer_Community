@@ -1,10 +1,13 @@
-<div class="container">
-  <h1>Hi {{currentUser.firstName}}!</h1>
+<div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Hi {{currentUser.username}}! Edit Notice</h1>
+        </div>
+      
+        <div class="panel-body">
   <!-- <div class="col-md-6 col-md-offset-3"> -->
-      <h2>Update</h2>
       <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !notice.valid }">
-              <label for="notice">Notice:</label>
+              <label for="notice">Edit Notice:</label>
               <input type="text" class="form-control" name="email" [(ngModel)]="model.notice" #notice="ngModel" required />
               <div *ngIf="f.submitted && !notice.valid" class="help-block">Notice is required</div>
           </div>          
@@ -14,4 +17,5 @@
               <button [disabled]="loading" [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Cancel to home</button>
           </div>
       </form>
+  </div>
   </div>

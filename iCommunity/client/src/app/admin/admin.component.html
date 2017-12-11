@@ -1,19 +1,23 @@
-<div class="container" id="users">
-    <h2>All Users</h2>
-      <div class="row" *ngFor="let user of users">
-        <div class="card card-block">
-          <h4 class="card-title">{{ user.username }}</h4>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">All Users</h1>
+  </div>
+
+  <div class="panel-body" id="users">
+      <div  *ngFor="let user of users">
+        <div class="block">
           <ul>
+          <h4 class="card-title">{{ user.username }}</h4>
             <li><p>Username: {{user.username}}</p></li> 
             <li><P>Name: ({{user.firstName}} {{user.lastName}})</P></li> 
             <li><p>Identity: {{user.identity}}</p></li> 
             <li><p>Major: {{user.major}}</p></li> 
-            <li><p><small>created on {{ user.created_date | date:'short'}}</small></p></li> 
+            <p><small>created on {{ user.created_date | date:'short'}}</small></p>
             <button class="btn btn-primary" (click)="deleteUser(user._id)">Delete</button>
           </ul>
         </div>
       </div>
-      
+      <button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Goto home</button>      
   </div>
-  <div><button [routerLink]="['/home']" class="btn btn-primary" ng-click="test()">Goto home</button></div>
+  </div>
   <!-- <a (click)="deleteUser(user._id)">Delete</a> -->
