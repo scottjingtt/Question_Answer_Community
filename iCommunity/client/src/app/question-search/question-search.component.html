@@ -1,10 +1,18 @@
-<div class="container" id="questions">
-  <h2>Questions Search</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title">Questions Search Result</h1>
+  </div>
+
+  <div class="panel-body" id="questions">
+    <p>{{currentUser.notice}}</p>
     <div class="row" *ngFor="let question of questions">
       <div class="card card-block">
         <h4 class="card-title">{{ question.title }}</h4>
-        <p><small>created on {{ question.created_date | date:'short'}}</small></p>
+        <p>
+          <small>created on {{ question.created_date | date:'short'}}</small>
+        </p>
         <a [routerLink]="['/questions', question._id]" class="card-link">View Answers</a>
       </div>
     </div>
+  </div>
 </div>
