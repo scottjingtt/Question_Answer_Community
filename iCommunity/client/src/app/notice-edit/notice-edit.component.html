@@ -8,7 +8,7 @@
       <form name="form" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
           <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !notice.valid }">
               <label for="notice">Edit Notice:</label>
-              <input type="text" class="form-control" name="email" [(ngModel)]="model.notice" #notice="ngModel" required />
+              <textarea rows="3"  type="text" class="form-control" name="email" [(ngModel)]="model.notice" #notice="ngModel" required ></textarea>
               <div *ngIf="f.submitted && !notice.valid" class="help-block">Notice is required</div>
           </div>          
           <div class="form-group">
