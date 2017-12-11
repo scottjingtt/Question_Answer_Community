@@ -45,8 +45,9 @@ finalUsers:any = [];
            
                       for (let entry of someArray) {  
                         var match =(entry.firstName+" "+entry.lastName);
+                        var match2 = entry.username;
                         console.log(match === s);
-                        if (match === s)
+                        if (match === s || match2 === s)
                         {
                           if(entry.identity == 'Professor'){
                             finalArray.push(entry);
