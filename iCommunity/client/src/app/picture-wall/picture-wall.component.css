@@ -4,22 +4,21 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif;
 .w3-third img:hover{opacity: 1}
 .picture-wall{
     /* border:solid; */
-    /* background-color: yellow; */
 }
 .w3-light-grey {
     /* border:solid green; */
     width:100%;
     padding:0;
-    /* margin: 0; */
+    /* margin: auto; */
 }
 .w3-content{
     /* border: solid red; */
-    width: 100%;
+    width: 100% !important;
     padding: 0;
-    /* margin:0; */
 }
 .w3-main{
     width: 100%;
+    
 }
 .w3-row{
     margin:0;
