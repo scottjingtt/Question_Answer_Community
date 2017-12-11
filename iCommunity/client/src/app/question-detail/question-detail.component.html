@@ -25,11 +25,11 @@
     <div class="panel-heading">
       <h2 class="panel-title">Answer</h2>
     </div>
-    <div *ngIf="selectedQuestion.answers.length == 0" class="container">
+    <div *ngIf="answers.length == 0" class="container">
       <h3>There is no anwsers available for this question by this point.</h3>
     </div>
-    <div *ngIf="selectedQuestion.answers.length != 0" class="panel-body">
-      <div class="block" *ngFor="let answer of selectedQuestion.answers">
+    <div *ngIf="answers.length != 0" class="panel-body">
+      <div class="block" *ngFor="let answer of answers">
         <!-- <div class="card card-block"> -->
           <h4 class="ansTitle">{{ answer.body }}</h4>
           <small>{{ answer.date | date:'short' }} by
