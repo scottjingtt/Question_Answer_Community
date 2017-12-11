@@ -8,6 +8,9 @@ hr{
 .radioLabel{
     padding: 0;
 }
+.radioBar{
+    margin: 10px;
+}
 
 .categary{
     float: left;
@@ -16,4 +19,12 @@ hr{
 }
 .clear {
     clear: both;
+}
+.ques{
+    margin: 10px;
+}
+.ques:hover{
+    border-radius: 5px;
+    background-color: hsla(0, 0, 0, 0.1);
+    font-size: 110%;
 }

@@ -26,9 +26,12 @@
   </div>
   <!-- <hr *ngIf="currentUser"> -->
   
-  <div class="container" id="questions">
-    <h2>Questions</h2>
-    <div *ngIf="currentUser">
+  <div class="panel panel-default" id="questions">
+    <div class="panel-heading">
+      <h2 class="panel-title">Question</h2>
+  </div>
+  <div class="panel-body">
+    <div *ngIf="currentUser" class="radioBar panel-body">
       <div class="radio">
       <input type="radio" [(ngModel)]="selectedCategory" name="selectedCategory" (click)='getQuestionByCategory("All")' [value]=null/>
       <label class="radioLabel">All</label>
@@ -38,11 +41,12 @@
       <label class="radioLabel">{{category}}</label>
       </div>
     </div>
-      <div class="row" *ngFor="let question of questions">
+      <div class="ques row panel-body" *ngFor="let question of questions">
         <div class="card card-block">
           <h4 class="card-title">{{ question.title }}</h4>
           <p><small>created by <a>{{question.creator.user}}</a> on {{ question.created_date | date:'short'}}</small></p>
           <a [routerLink]="['/questions', question._id]" class="card-link">View Answers</a>
         </div>
+      </div>
       </div>
   </div>
