@@ -29,11 +29,11 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 	}
 	
-	.panel .panel-default
+	.panel
 	{
 		background: #eee;
-		-webkit-box-shadow:0 10px 10px rgba(0, 0, 0, 0.5);
-		-moz-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+		-webkit-box-shadow:0 10px 10px rgba(0, 0, 0, 0.5) !important;
+		-moz-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5) !important;
 		box-shadow:  0 10px 10px rgba(0, 0, 0, 0.5) !important;
 		z-index:5;
 	}
