@@ -82,3 +82,9 @@ exports.find = function(request, response){
         response.json(questions);
     });
 }
+exports.findByUser = function(request, response){
+    questionService.search({creator: {user: request.params.user, id: request.params.userId}}, function (questions) {
+        response.status(200);
+        response.json(questions);
+    });
+}

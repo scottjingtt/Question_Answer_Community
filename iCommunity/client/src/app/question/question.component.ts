@@ -47,19 +47,15 @@ export class QuestionComponent implements OnInit {
     var response = '{"title" : "' + this.newQuestion + '", "content" : "' + this.questionContent+ '", "creator" : {"id": "' + JSON.parse(localStorage.getItem("currentUser"))._id+ '", "user" : "' + JSON.parse(localStorage.getItem("currentUser")).username +'"}, "category": "' + this.questionCategory  + '"}';
     console.log("category is " + this.questionCategory);
     this.questionsService.postQuestion(JSON.parse(response));
+    console.log(this.questions);
+    this.newQuestion = null;
+    this.questionsService.getAllQuestions().subscribe(questions =>
+      { this.questions = questions; 
+    });
     this.sortOnTime();
     // console.log(this.questions);
-    // this.questionsService.getAllQuestions().subscribe(questions =>
-    //   { this.questions = questions; 
-    // });
-    // console.log(this.questions);
-    window.location.reload();
+    // window.location.reload();
   }
-
-  searchQuestion(){
-    JSON.parse(this.questions)
-  }
-
   getQuestionByCategory(category){
     console.log(category);
     if(category != "All"){

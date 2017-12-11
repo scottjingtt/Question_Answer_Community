@@ -1,0 +1,13 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1 class="panel-title">My Questions</h1>
+    </div>
+
+    <div class="panel-body">
+      <div class="block" *ngFor="let question of myquestions">
+          <p>{{question.title}}</p>
+          <a (click)="deleteQuestion(question)">Delete Questions</a>
+          <a [routerLink]="['/questions', question._id]" class="card-link">View Answers</a>
+      </div>  
+    </div>
+</div>

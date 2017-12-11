@@ -37,4 +37,14 @@ export class QuestionsService {
   getQuestionByCategory(category){
     return this.http.get('/api/questions/category/' + category).map(res => res.json());
   }
+  getQuestionByUser(){
+    var currentUser = localStorage.getItem('currentUser');
+    console.log("Here" + JSON.parse(currentUser)._id);
+    return this.http.get('/api/questions/' + JSON.parse(currentUser).username + '/' + JSON.parse(currentUser)._id).map(res => res.json());
+  }
+  deleteQuestion(id){
+    return this.http.delete('/api/questions/' + id).subscribe(data => {
+      console.log(data);
+    });
+  }
 }

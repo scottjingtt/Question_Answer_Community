@@ -7,6 +7,7 @@
             <local-search></local-search>
             <notice *ngIf="currentUser"></notice>
             <login *ngIf="!currentUser"></login>
+            <app-myquestions *ngIf="currentUser"></app-myquestions>
         </div>
         <div class="col-sm-9">
             <!-- <div class="jumbotron"> -->
