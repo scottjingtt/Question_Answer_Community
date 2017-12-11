@@ -50,7 +50,7 @@ export class QuestionComponent implements OnInit {
   }
 
   postQuestion(){
-
+    console.log("Question Content " + this.questionContent);
     var response = '{"title" : "' + this.newQuestion + '", "content" : "' + this.questionContent+ '", "creator" : {"id": "' + JSON.parse(localStorage.getItem("currentUser"))._id+ '", "user" : "' + JSON.parse(localStorage.getItem("currentUser")).username +'"}, "category": "' + this.questionCategory  + '"}';
     console.log("category is " + this.questionCategory);
     this.questionsService.postQuestion(JSON.parse(response));
