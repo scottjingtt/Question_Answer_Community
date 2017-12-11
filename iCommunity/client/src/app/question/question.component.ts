@@ -27,7 +27,7 @@ export class QuestionComponent implements OnInit {
         }else{
           this.currentUser = null;
         }
-        console.log("questions are " + questions);
+        console.log("questions are " + this.questions);
         this.questions = questions; 
         this.sortOnTime();
     });
