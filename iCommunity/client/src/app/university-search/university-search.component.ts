@@ -4,7 +4,7 @@ declare var google: any;
 @Component({
 	selector: 'university-search',
 	templateUrl: './university-search.component.html',
-	styleUrls: ['./university-search.component.sass']
+	styleUrls: ['./university-search.component.scss']
 })
 export class UniversitySearchComponent implements OnInit {
 

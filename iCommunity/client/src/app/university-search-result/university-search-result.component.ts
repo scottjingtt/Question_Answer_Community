@@ -4,7 +4,7 @@ import { PlacesService } from '../services/places.service';
 @Component({
   selector: 'university-search-result',
   templateUrl: './university-search-result.component.html',
-  styleUrls: ['./university-search-result.component.sass']
+  styleUrls: ['./university-search-result.component.scss']
 })
 export class UniversitySearchResultComponent implements OnInit {
 
