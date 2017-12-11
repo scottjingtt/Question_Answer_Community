@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit,Output,EventEmitter} from '@angular/core';
 import { User } from '../models/user';
 import { AlertService, UserService,AuthenticationService } from '../services/index';
 
@@ -30,6 +30,13 @@ export class NavigationComponent implements OnInit {
     this.currentUser = null;
     this.authenticationService.logout();
     location.reload();
+  }
+
+  @Output()
+  notify: EventEmitter<string> = new EventEmitter<string>();
+
+  showPictureWall():void{
+      this.notify.emit("picture-wall");
   }
 
 }

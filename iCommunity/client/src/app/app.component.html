@@ -1,8 +1,9 @@
 <!-- main app container -->
 <div>
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation"></nav>
+    <picture-wall *ngIf="showIndex" (notify)="onNotifyClicked($event)"></picture-wall>
+    <nav (notify)="showPictureWall($event)" *ngIf="!showIndex"class="navbar navbar-inverse navbar-static-top" role="navigation"></nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" *ngIf="!showIndex">
         <div class="col-sm-3">
             <local-search></local-search>
             <notice *ngIf="currentUser"></notice>
