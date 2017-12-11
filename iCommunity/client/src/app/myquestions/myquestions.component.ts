@@ -26,6 +26,7 @@ export class MyquestionsComponent implements OnInit {
       this.myquestions = questions
     }
     );
+    location.reload();
   }
 
 }
