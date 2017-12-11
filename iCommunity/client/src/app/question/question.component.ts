@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../services/questions.service';
 import { Query } from '@angular/core/src/metadata/di';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
 
 
 @Component({
