@@ -13,6 +13,7 @@ export class QuestionComponent implements OnInit {
   questions: any = [];
   newQuestion: any;
   questionCategory: any;
+  questionContent:any;
   categories: any = ["Science", "Engineering", "History", "Culture"];
   currentUser: any = null;
 
@@ -43,7 +44,7 @@ export class QuestionComponent implements OnInit {
 
   postQuestion(){
 
-    var response = '{"title" : "' + this.newQuestion + '", "creator" : {"id": "' + JSON.parse(localStorage.getItem("currentUser"))._id+ '", "user" : "' + JSON.parse(localStorage.getItem("currentUser")).username +'"}, "category": "' + this.questionCategory  + '"}';
+    var response = '{"title" : "' + this.newQuestion + '", "content" : "' + this.questionContent+ '", "creator" : {"id": "' + JSON.parse(localStorage.getItem("currentUser"))._id+ '", "user" : "' + JSON.parse(localStorage.getItem("currentUser")).username +'"}, "category": "' + this.questionCategory  + '"}';
     console.log("category is " + this.questionCategory);
     this.questionsService.postQuestion(JSON.parse(response));
     this.sortOnTime();
