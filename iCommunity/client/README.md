@@ -61,7 +61,7 @@ Basically achieve this page with CSS stylesheet and `Output, EventEmitter` to se
 
 It is a Search function for places of `type` : `university` within a desired `radius`. radius defines the distance (in meters) within which to return place results. 
 
-1. Use Google Places API Web Service to get a Key `AIzaSyCu2wmw2suniAVwjc8IUOYPmmEemHJbBls`.
+1. Use `Google Places API Web Service` to get a Key `AIzaSyCu2wmw2suniAVwjc8IUOYPmmEemHJbBls`.
 2. give permission for the browser to locate you.
 3. Use Geolocation Service `geolocation.getCurrentPosition()` to Set current location coordinates, initMap with zoom level is 15 (street), place service and maker current location.
 4. Give a radius and Use callback method to nearby search requests `nearbySearch()` to search universities.
