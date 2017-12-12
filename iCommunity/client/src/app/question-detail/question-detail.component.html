@@ -10,7 +10,9 @@
     <div class="card card-block">
     <p>{{selectedQuestion.content}}</p>
   </div>
-    <small>Question posted date : {{selectedQuestion.created_date | date:'short'}} by <a>{{selectedQuestion.creator.user}}</a></small>
+    <small>Question posted date : {{selectedQuestion.created_date | date:'short'}} by 
+      <a (click)="showEmail(selectedQuestion.creator.id)">{{selectedQuestion.creator.user}}</a>
+    </small>
     <div *ngIf="currentUser.identity == 'Professor'">
       <form (ngSubmit)="postAnswer()">
         <div class="form-group">
@@ -35,7 +37,7 @@
         <!-- <div class="card card-block"> -->
           <h4 class="ansTitle">{{ answer.body }}</h4>
           <small>{{ answer.date | date:'short' }} by
-            <a>{{answer.creator}}</a>
+            <a (click)="showEmail(answer.creator_id)">{{answer.creator}}</a>
           </small>
         <!-- </div> -->
       </div>

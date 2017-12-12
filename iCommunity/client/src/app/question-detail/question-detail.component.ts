@@ -3,6 +3,7 @@ import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../services/questions.service';
 import { User } from '../models/user';
+import { UserService } from '../services/index';
 
 @Component({
   selector: 'app-question-detail',
@@ -11,7 +12,7 @@ import { User } from '../models/user';
 })
 export class QuestionDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private router: Router, private questionsService: QuestionsService) {
+  constructor(private route: ActivatedRoute, private router: Router, private questionsService: QuestionsService, private userService:UserService) {
 
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
    }
@@ -21,6 +22,8 @@ export class QuestionDetailComponent implements OnInit {
   answers: any = [];
   newAnswer: any;
   currentUser: User;
+  creator:any={};
+
   
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
@@ -48,4 +51,12 @@ export class QuestionDetailComponent implements OnInit {
     });
   }
 
+  showEmail(id){
+    this.userService.getById(id).subscribe(user =>
+      {
+        this.creator = user;
+        alert("Contatct the author by:" + this.creator.email);
+      }
+    );
+  }
 }

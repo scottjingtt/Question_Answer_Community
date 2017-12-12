@@ -44,7 +44,7 @@
       <!-- <div class="panel-body"> -->
         <div class="block ques" *ngFor="let question of questions">
           <h4 class="card-title">{{ question.title }}</h4>
-          <p><small>created by <a>{{question.creator.user}}</a> on {{ question.created_date | date:'short'}}</small></p>
+          <p><small>created by <a (click)="showEmail(question.creator.id)">{{question.creator.user}}</a> on {{ question.created_date | date:'short'}}</small></p>
           <a [routerLink]="['/questions', question._id]" class="card-link">View Answers</a>
         </div>
       <!-- </div> -->

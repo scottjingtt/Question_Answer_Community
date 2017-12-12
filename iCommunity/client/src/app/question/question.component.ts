@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../services/questions.service';
 import { Query } from '@angular/core/src/metadata/di';
+import { UserService } from '../services/index';
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
@@ -14,8 +15,9 @@ export class QuestionComponent implements OnInit {
   questionContent:any;
   categories: any = ["Science", "Engineering", "History", "Culture"];
   currentUser: any = null;
+  creator:any={};
 
-  constructor(private questionsService: QuestionsService) { }
+  constructor(private questionsService: QuestionsService, private userService:UserService) { }
 
   ngOnInit() {
     this.questionsService.getAllQuestions().subscribe(questions =>
@@ -69,6 +71,15 @@ export class QuestionComponent implements OnInit {
           this.sortOnTime();
       });
     }
+  }
+
+  showEmail(id){
+    this.userService.getById(id).subscribe(user =>
+      {
+        this.creator = user;
+        alert("Contatct the author by:" + this.creator.email);
+      }
+    );
   }
 
 }
