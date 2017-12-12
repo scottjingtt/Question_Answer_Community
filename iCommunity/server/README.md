@@ -16,15 +16,11 @@ This project was generated with MongoDB, Express, NodeJS
 --User part
 
 1. Token
-
-Server will check each request url, except "'/users/authenticate', '/users/register','/api/questions'", if it has attribute of `token`. Except "login","register", get "questions" request, other request url if doesn't have "token" then will response "Not authorized".
-
+* Server will check each request url, except "'/users/authenticate', '/users/register','/api/questions'", if it has attribute of `token`. Except "login","register", get "questions" request, other request url if doesn't have "token" then will response "Not authorized".
 2. user-route
-
-`user-route` decides which function in `user-controller` will be used based on request url.
+* `user-route` decides which function in `user-controller` will be used based on request url.
     * `http://localhost:3000/users`
         * .get(userController.list): Get all users list only when user identity is "admin".
-    //Routes for get, update and delete.
     * `http://localhost:3000/users/:userId`
         * .get(userController.get): Get specific user information by ID.
         * .put(userController.put):Update user information
@@ -34,12 +30,9 @@ Server will check each request url, except "'/users/authenticate', '/users/regis
     * `http://localhost:3000/users/register`
         .post(userController.register):Create new user.
 3. user-controller
-
-`user-controller` exports functions to be called by `user-route`, which will call functions in `user-service` and will response to client.
-
+* `user-controller` exports functions to be called by `user-route`, which will call functions in `user-service` and will response to client.
 4. user-service
-
-Functions in `user-service` directly operate database and data, like create, delete and update user. When create user and update user information, "check if username already exist" and "create 'token' when login" happens here.
+* Functions in `user-service` directly operate database and data, like create, delete and update user. When create user and update user information, "check if username already exist" and "create 'token' when login" happens here.
 
 ## Project Description(Server)
 
