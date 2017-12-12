@@ -71,3 +71,15 @@ It is a Search function for places of `type` : `university` within a desired `ra
 4. Give a radius and Use callback method to nearby search requests `nearbySearch()` to search universities.
 5. Show the results. The maximum number of results that can be returned is 60. 
 
+## Search Functionality
+
+### Search has four related component: professor-search and question-search 
+
+1. Question search searches the questions when user enters input in box and clicks on search.
+2. Professor search works same as question. User needs to fill Professor Name as search query.
+
+## User Notice
+### Search has two related component: notice and notice-edit
+
+1. User can see a common notice board displayed to all users using notice component.
+2. Admin can edit the notice for all users using notice-edit component.
