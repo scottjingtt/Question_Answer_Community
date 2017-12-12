@@ -35,8 +35,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### User part has 5 main components: Register,Login,Home,Admin,Profile
 
 ### Two services: UserService, AuthenticationService
-
-UserService ,AuthenticationService and AlertService
 1. User registration
 User can create new account through `UserService`. Except basic information, user also can use "gravatar link" to set user image. All information of registration form are `required` and user `Regular Expressions` to validate "username" and "email" input.This form will be sent to server by `UserService.create`.
 2. User login
@@ -71,3 +69,26 @@ It is a Search function for places of `type` : `university` within a desired `ra
 4. Give a radius and Use callback method to nearby search requests `nearbySearch()` to search universities.
 5. Show the results. The maximum number of results that can be returned is 60. 
 
+## Search Functionality
+
+### Search has four related component: professor-search and question-search 
+
+1. Question search searches the questions when user enters input in box and clicks on search.
+2. Professor search works same as question. User needs to fill Professor Name as search query.
+
+## User Notice
+### Search has two related component: notice and notice-edit
+
+1. User can see a common notice board displayed to all users using notice component.
+2. Admin can edit the notice for all users using notice-edit component.
+
+## Search Function using GitHub Search API
+
+1. Professors can provide their GitHub user name while answering the questions when the example or the code for the answer of the question asked is already present in the Professors GitHub Repository.
+2. User Can Go to SearchGitHub tab on the repository to search the Professors repository by username.
+
+## Search GitHub has one related component and Service :form-fields.component and GitHub-Search.service
+
+1. Form-Fileds component gets the user name from the text field and uses `searchUser()` function  which updates the user dynamically and using `updateUser()` function then for a perticular user it will get its user data using `getUserData()` function which gets the defined url and add the user from updateUser() function plus the defined clientId and defined clientSecret after geting the user data it uses it in form.components.ts to get the user image,user name, user full name using `userData.avatar_url` and `userData.login` and `userData.name`  respectively.
+
+2. now it will use the getRepoData() function to get the users repository which gets the defined url and add the user from updateUser() function plus the defined clientId and defined clientSecret after getting the repository data from git hub api it will use that data in form-fields.component to get all the repository of that user using `repo.name` and redirecting to that repository using `repo.html_url`. 
