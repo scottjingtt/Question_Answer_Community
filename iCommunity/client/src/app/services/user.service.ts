@@ -48,10 +48,6 @@ export class UserService {
         });
     }
 
-    // update(user: User) {
-    //     return this.http.put('/users/' + user._id, user);
-    // }
-
     delete(_id: string) {
         return this.http.delete('/users/' + _id);
     }
