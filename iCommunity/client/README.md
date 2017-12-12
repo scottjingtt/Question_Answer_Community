@@ -2,11 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
 
-## Development server
+## Development client
 
 1. Run `npm install`
 
 2. Run `node server.js` to start server project. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
 
 ## Project Description(Client)
 
@@ -54,3 +55,15 @@ We have re-write http requests to create some functions will send requests to se
 #Picture Wall(PictureWallComponent)
 1. Picture wall: Main page of this project. Before user click to navigate to login page, there will be a picture wall to show several universities' pictures. Users can click each picture to zoom in. And there is one picture user can click to navigate to login page.
 Basically achieve this page with CSS stylesheet and `Output, EventEmitter` to send variable to its parent element to decide if user has clicked to show login page.
+
+## University-search:
+## University-search has two related components: university-search and university-search-result
+
+It is a Search function for places of `type` : `university` within a desired `radius`. radius defines the distance (in meters) within which to return place results. 
+
+1. Use Google Places API Web Service to get a Key `AIzaSyCu2wmw2suniAVwjc8IUOYPmmEemHJbBls`.
+2. give permission for the browser to locate you.
+3. Use Geolocation Service `geolocation.getCurrentPosition()` to Set current location coordinates, initMap with zoom level is 15 (street), place service and maker current location.
+4. Give a radius and Use callback method to nearby search requests `nearbySearch()` to search universities.
+5. Show the results. The maximum number of results that can be returned is 60. 
+

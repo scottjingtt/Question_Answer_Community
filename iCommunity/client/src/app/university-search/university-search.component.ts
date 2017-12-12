@@ -116,7 +116,7 @@ export class UniversitySearchComponent implements OnInit {
 
 			bounds.extend(place.geometry.location);
 
-			//Push place to the restaurants list
+			//Push place to the university list
 			this.universities.push(place);
 
 		}
@@ -134,6 +134,7 @@ export class UniversitySearchComponent implements OnInit {
 	initMap(location) {
 		this.map = new google.maps.Map(document.getElementById('map'), {
 			center: location,
+			//street
 			zoom: 15
 		});
 	}
