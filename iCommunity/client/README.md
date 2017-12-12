@@ -35,8 +35,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### User part has 5 main components: Register,Login,Home,Admin,Profile
 
 ### Two services: UserService, AuthenticationService
-
-UserService ,AuthenticationService and AlertService
 1. User registration
 User can create new account through `UserService`. Except basic information, user also can use "gravatar link" to set user image. All information of registration form are `required` and user `Regular Expressions` to validate "username" and "email" input.This form will be sent to server by `UserService.create`.
 2. User login
