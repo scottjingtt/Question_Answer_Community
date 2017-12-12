@@ -31,7 +31,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Search universities:
 
-## University-search has two related components: university-search and university-search-result
+### University-search has two related components: university-search and university-search-result
 
 It is a Search function for places of `type` : `university` within a desired `radius`. radius defines the distance (in meters) within which to return place results. 
 
