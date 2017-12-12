@@ -83,3 +83,14 @@ It is a Search function for places of `type` : `university` within a desired `ra
 
 1. User can see a common notice board displayed to all users using notice component.
 2. Admin can edit the notice for all users using notice-edit component.
+
+## Search Function using GitHub Search API
+
+1. Professors can provide their GitHub user name while answering the questions when the example or the code for the answer of the question asked is already present in the Professors GitHub Repository.
+2. User Can Go to SearchGitHub tab on the repository to search the Professors repository by username.
+
+## Search GitHub has one related component and Service :form-fields.component and GitHub-Search.service
+
+1. Form-Fileds component gets the user name from the text field and uses `searchUser()` function  which updates the user dynamically and using `updateUser()` function then for a perticular user it will get its user data using `getUserData()` function which gets the defined url and add the user from updateUser() function plus the defined clientId and defined clientSecret after geting the user data it uses it in form.components.ts to get the user image,user name, user full name using `userData.avatar_url` and `userData.login` and `userData.name`  respectively.
+
+2. now it will use the getRepoData() function to get the users repository which gets the defined url and add the user from updateUser() function plus the defined clientId and defined clientSecret after getting the repository data from git hub api it will use that data in form-fields.component to get all the repository of that user using `repo.name` and redirecting to that repository using `repo.html_url`. 
