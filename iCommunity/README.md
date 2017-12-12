@@ -1,21 +1,10 @@
-server:
-npm install
-node server.js
-
-client:
-cd my-app
-ng serve --open
+# i-Community
 
 
+1. Start MongoDB
 
+2. Start server
 
+3. Start client
 
-directives
-helps
-models
-register
-home
-
-services(authentification)
-guards
-login
+##Project Description(i-Community)
