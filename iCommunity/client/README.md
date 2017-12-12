@@ -29,12 +29,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 3. MyQuestions used `getQuestionByUser()` to get all questions based on the creator. Also used `deleteQuestion` to delete the question from database. All of those functions are provided by `QuestionService` in services file.
 4. `QuestionService` provides services for question related problem. it has search function based on question title, creator, question id, also update and delete function, all of them have a corresponding function on server side(3000 protocol server).
 
-## University-search:
+## Search universities:
+
 ## University-search has two related components: university-search and university-search-result
 
 It is a Search function for places of `type` : `university` within a desired `radius`. radius defines the distance (in meters) within which to return place results. 
 
-1. Use Google Places API Web Service to get a Key `AIzaSyCu2wmw2suniAVwjc8IUOYPmmEemHJbBls`.
+1. Use `Google Places API Web Service` to get a Key `AIzaSyCu2wmw2suniAVwjc8IUOYPmmEemHJbBls`.
 2. give permission for the browser to locate you.
 3. Use Geolocation Service `geolocation.getCurrentPosition()` to Set current location coordinates, initMap with zoom level is 15 (street), place service and maker current location.
 4. Give a radius and Use callback method to nearby search requests `nearbySearch()` to search universities.
